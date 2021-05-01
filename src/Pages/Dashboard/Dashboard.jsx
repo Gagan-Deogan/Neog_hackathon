@@ -23,23 +23,11 @@ const reducer = (state, action) => {
       return state;
   }
 };
-
-export const Dashboard = () => {
-  const [channels, setChannels] = useState();
-  const [addChannel, setAddChannel] = useState(false);
-  const [
-    { name, description, schedule, image, imageUrl },
-    dispatch,
-  ] = useReducer(reducer, intialState);
-  const navigate = useNavigate();
-  useEffect(() => {
-    db.collection("channels").onSnapshot((snapshot) => {
-      const data = snapshot.docs.map((doc) => {
-        return { id: doc.id, ...doc.data() };
-      });
-      setChannels(data);
-    });
-  }, []);
+const AddNewChannel = () => {
+  const [{ name, description, schedule, image }, dispatch] = useReducer(
+    reducer,
+    intialState
+  );
 
   const uploadImage = async (image) => {
     const next = (snapshot) => {
@@ -82,6 +70,57 @@ export const Dashboard = () => {
     dispatch({ type: "ADD_SCHEDULE", payload: e.target.value });
   };
   return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Channel Name</label>
+      <br />
+      <input
+        type="text"
+        id="name"
+        value={name}
+        onChange={(e) =>
+          dispatch({ type: "ADD_NAME", payload: e.target.value })
+        }
+      />
+      <br />
+      <label htmlFor="description">Channel Description</label>
+      <br />
+      <textarea
+        type="text"
+        id="description"
+        value={description}
+        onChange={(e) =>
+          dispatch({ type: "ADD_DESCRIPTION", payload: e.target.value })
+        }
+      />
+      <br />
+      <label htmlFor="schedule">Schedule</label>
+      <br />
+      <input
+        type="datetime-local"
+        id="description"
+        onChange={(e) => handleDateChange(e)}
+      />
+      <br />
+      <input type="file" onChange={(e) => handleFileChange(e)} />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export const Dashboard = () => {
+  const [channels, setChannels] = useState();
+  const [addChannel, setAddChannel] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    db.collection("channels").onSnapshot((snapshot) => {
+      const data = snapshot.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+      setChannels(data);
+    });
+  }, []);
+  return (
     <>
       <h1>DashBoard</h1>
       {channels?.map((channel) => (
@@ -93,43 +132,7 @@ export const Dashboard = () => {
         </div>
       ))}
       <button onClick={() => setAddChannel(!addChannel)}>Add Channel</button>
-      {addChannel && (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Channel Name</label>
-          <br />
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) =>
-              dispatch({ type: "ADD_NAME", payload: e.target.value })
-            }
-          />
-          <br />
-          <label htmlFor="description">Channel Description</label>
-          <br />
-          <textarea
-            type="text"
-            id="description"
-            value={description}
-            onChange={(e) =>
-              dispatch({ type: "ADD_DESCRIPTION", payload: e.target.value })
-            }
-          />
-          <br />
-          <label htmlFor="schedule">Schedule</label>
-          <br />
-          <input
-            type="datetime-local"
-            id="description"
-            onChange={(e) => handleDateChange(e)}
-          />
-          <br />
-          <input type="file" onChange={(e) => handleFileChange(e)} />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-      )}
+      {addChannel && <AddNewChannel />}
     </>
   );
 };
