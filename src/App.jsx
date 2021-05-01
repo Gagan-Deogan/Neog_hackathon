@@ -1,9 +1,16 @@
-import { auth } from "./firebase";
-
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useStatus } from "./Context/LoaderContext";
+import { ProtectedRoute } from "./Components/ProtectedRoute";
+import { Home } from "./Pages/Home";
+import { Profile } from "./Pages/Profile";
 const App = () => {
+  const { status } = useStatus();
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <ProtectedRoute path="/profile" element={<Profile />} />
+      </Routes>
     </div>
   );
 };
