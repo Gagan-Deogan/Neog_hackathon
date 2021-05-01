@@ -1,0 +1,15 @@
+.Footer p {
+  text-align: end;
+  padding: 0 10px;
+  color: #c2c2c2;
+  font-weight: 300;
+}
+
+
+
+@media screen and (max-width: 800px){
+    .Footer p {
+        text-align: center;
+        padding: 10px 10px;
+    }
+}
