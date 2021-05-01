@@ -12,6 +12,9 @@ export const Home = () => {
         <>
           <h1>Login</h1>
           <NavLink to="/profile">profile</NavLink>
+          <br />
+          <NavLink to="/dashboard">Dashboard</NavLink>
+          <br />
           {!user && <button onClick={loginUser}>Login</button>}
           {user && <button onClick={logoutUser}>Logout</button>}
         </>
