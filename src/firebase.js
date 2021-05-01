@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 const {
   REACT_APP_API_KEY,
   REACT_APP_AUTH_DOMAIN,
@@ -32,5 +33,6 @@ const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 const provider = new firebase.auth.GoogleAuthProvider();
+const storage = new firebase.storage();
 
-export { auth, provider, db };
+export { auth, provider, db, storage };
