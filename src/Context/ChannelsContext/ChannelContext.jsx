@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState, useContext } from "react";
-import { Channels } from "../../Components/Channels";
+// import { Channels } from "../../Components/Channels";
 import { db } from "../../firebase";
 const ChannelContext = createContext();
 

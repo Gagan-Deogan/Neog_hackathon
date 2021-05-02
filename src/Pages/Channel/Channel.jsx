@@ -51,6 +51,7 @@ const AudinceList = ({
   );
 };
 export const Channel = () => {
+  console.log("Hello");
   const { state } = useSidebarContext();
   const { channelId } = useParams();
   const {

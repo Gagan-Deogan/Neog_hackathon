@@ -15,15 +15,21 @@
     transition: left .4s cubic-bezier(.25, .8, .25, 1);
 }
 
+.logo {
+    width: 12rem;
+    display: block;
+    margin: 0 auto;
+}
+
 .sidebarToggled {
     left: -100% !important;
     display: none !important;
-
 }
 
 .sidebarHeader {
     border-bottom: 1px solid #E8E7E9;
-    padding: 2rem 1rem;
+    padding: 0 1rem;
+    height: 6rem;
 }
 
 .sidebarSection {

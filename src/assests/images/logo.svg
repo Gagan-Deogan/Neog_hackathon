@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="232.5" height="49.784" viewBox="0 0 232.5 49.784">
+  <g id="Group_3" data-name="Group 3" transform="translate(-741 -469)">
+    <g id="Group_2" data-name="Group 2" transform="translate(135 25.986)">
+      <g id="speech-bubble" transform="translate(606 457.23)">
+        <g id="Speech_Bubble_48_" transform="translate(0 0)">
+          <g id="Group_1" data-name="Group 1" transform="translate(0 0)">
+            <path id="Path_1" data-name="Path 1" d="M5.095,66.115H2.615l1.753-2.024a7.316,7.316,0,0,0,1.694-4.05A15.025,15.025,0,0,1,0,47.874,17.4,17.4,0,0,1,17.555,30.548c11.35,0,17.436,8.036,17.436,16.573,0,8.593-6.15,16.624-17.436,16.624a20.676,20.676,0,0,1-5.882-.864A8.641,8.641,0,0,1,5.095,66.115Z" transform="translate(0 -30.548)" fill="#4460f1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text id="gupshupp" transform="translate(785.5 507)" fill="#15161a" stroke="#15161a" stroke-width="1" font-size="40" font-family="Gilroy-Regular, Gilroy"><tspan x="0" y="0">gupshupp</tspan></text>
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(749 498)" fill="#fff" stroke="#fff" stroke-width="1">
+      <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+      <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+    </g>
+    <g id="Ellipse_1-2" data-name="Ellipse 1" transform="translate(756 498)" fill="#fff" stroke="#fff" stroke-width="1">
+      <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+      <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+    </g>
+    <g id="Ellipse_1-3" data-name="Ellipse 1" transform="translate(763 498)" fill="#fff" stroke="#fff" stroke-width="1">
+      <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+      <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+    </g>
+  </g>
+</svg>

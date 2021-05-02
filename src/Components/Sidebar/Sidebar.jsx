@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Temp from "../../assests/images/temp.svg";
 import { useSidebarContext } from "../../Context/SidebarContext";
 import { useChannelsProvider } from "../../Context/ChannelsContext";
+import Logo from "../../assests/images/logo.svg";
 import "./Sidebar.css";
 
 const ChannelLink = ({ channel }) => {
@@ -30,8 +31,8 @@ export const Sidebar = () => {
   const { channels } = useChannelsProvider();
   return (
     <aside className={state ? "sidebarToggled" : "sidebar"}>
-      <div className="sidebarHeader mT1 pB3 flex j-space-between a-items-center">
-        <FaIcons.FaBlog className="toggleButton" />
+      <div className="sidebarHeader  flex j-space-between a-items-center">
+        <img src={Logo} alt="logo" className="logo"></img>
       </div>
       <nav>
         <div className="sidebarSection">
