@@ -1,8 +1,6 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
-
 import "./Card.css";
-import { Link } from "react-router-dom";
 function toDateTime(secs) {
   var t = new Date(Date.UTC(1970, 0, 1)); // Epoch
   t.setUTCSeconds(secs);

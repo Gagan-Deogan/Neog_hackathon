@@ -12,12 +12,13 @@
     z-index: 20;
     background-color: #FBFBFC;
     border-right: 1px solid #E8E7E9;
-    transition: width 300ms;
+    transition: left .4s cubic-bezier(.25, .8, .25, 1);
 }
 
 .sidebarToggled {
     left: -100% !important;
     display: none !important;
+
 }
 
 .sidebarHeader {

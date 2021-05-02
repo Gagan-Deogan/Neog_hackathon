@@ -7,6 +7,7 @@ import { Dashboard } from "./Pages/Dashboard";
 import { Channels } from "./Components/Channels";
 import { Snakbar } from "./Components/Snakbar";
 import { useSnakbarContext } from "./Context/SnakbarContext";
+import { Channel } from "./Pages/Channel/Channel";
 
 const App = () => {
   const { snakbarStatus } = useSnakbarContext();
@@ -17,6 +18,7 @@ const App = () => {
         <ProtectedRoute path="/profile" element={<Profile />} />
         <Route path="/dashboard/*" element={<Dashboard />}>
           <Route path="/create" element={<Channels />}></Route>
+          <Route path="/channelName" element={<Channel />}></Route>
         </Route>
       </Routes>
       {snakbarStatus["isShow"] === true && <Snakbar></Snakbar>}

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import Search from "../../assests/images/search.svg";
 import * as FaIcons from "react-icons/fa";
 import Plus from "../../assests/images/plus.svg";
