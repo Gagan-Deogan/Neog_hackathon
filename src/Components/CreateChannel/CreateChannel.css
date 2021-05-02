@@ -42,18 +42,6 @@
   background-color: transparent;
 }
 
-.button {
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--secondary);
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
 
 .button-primary {
   align-self: center;
@@ -80,7 +68,7 @@
   background-color: white;
   padding: 1rem;
   border-radius: 5px;
-  box-shadow: 0 0 2px 5px #d2d2d2;
+  box-shadow: 0 0 2px 0px #d2d2d2;
   justify-content: center;
 }
 
