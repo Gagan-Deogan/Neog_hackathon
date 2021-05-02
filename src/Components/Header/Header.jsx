@@ -17,10 +17,10 @@ export const Header = () => {
           className="toggleButton"
           onClick={() => setState((toggle) => !toggle)}
         />
-        <form action="#" className="formGroup">
+        {/*  <form action="#" className="formGroup">
           <img src={Search} alt="" className="formIcon" />
           <input type="text" placeholder="Search..." className="formField" />
-        </form>
+        </form> */}
       </div>
       <div className="headerRightWrapper">
         <div className="buttonWrapper">
