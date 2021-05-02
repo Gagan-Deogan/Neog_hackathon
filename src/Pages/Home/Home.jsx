@@ -1,24 +1,35 @@
 import { useAuthContext } from "../../Context/AuthContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useStatus } from "../../Context/LoaderContext";
+import banner from "../../assests/images/banner.svg";
+import "./index.css";
+import googleIcon from "../../assests/images/google-icon.svg";
 
 export const Home = () => {
   const { user, loginUser, logoutUser } = useAuthContext();
-  const { status } = useStatus();
+  const navigate = useNavigate();
   return (
     <>
-      {status !== "IDLE" && <h1>Loading...</h1>}
-      {status === "IDLE" && (
-        <>
-          <h1>Login</h1>
-          <NavLink to="/profile">profile</NavLink>
-          <br />
-          <NavLink to="/dashboard">Dashboard</NavLink>
-          <br />
-          {!user && <button onClick={loginUser}>Login</button>}
+      <div className="Login">
+        <div className="bannerImageWrapper">
+          <img className="bannerImage" src={banner} alt="Banner image" />
+          <div className="footer">
+            <p>Designed and developed by Team Name</p>
+          </div>
+        </div>
+        <div className="loginContent">
+          <h1>Log In to GupShup</h1>
+          <p>Millions of people use GupShup to turn ideas into reality</p>
+
+          {!user && (
+            <button onClick={loginUser}>
+              <img alt="google-icon" className="googleIcon" src={googleIcon} />
+              Sign in with google
+            </button>
+          )}
           {user && <button onClick={logoutUser}>Logout</button>}
-        </>
-      )}
+        </div>
+      </div>
     </>
   );
 };
