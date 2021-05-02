@@ -39,14 +39,12 @@ export const ChatBox = () => {
       <div
         className="emoji-picker"
         onClick={() => setInput(input + chosenEmoji.emoji)}
-        style={{ display: displayEmoji ? "block" : "none" }}>
+        style={{ display: displayEmoji ? "block" : "none" }}
+      >
         <Picker onEmojiClick={onEmojiClick} />
       </div>
       <div className="chatMessage">
-        <form
-          action="#"
-          style={{ display: "flex" }}
-          onSubmit={(e) => sendMessage(e)}>
+        <form action="#" onSubmit={(e) => sendMessage(e)}>
           <input
             type="text"
             value={input}
@@ -56,14 +54,16 @@ export const ChatBox = () => {
           />
 
           <span
-            className="emojiDisplay"
-            onClick={() => setDisplayEmoji(!displayEmoji)}>
+            className="emojiDisplay emojiIcon"
+            onClick={() => setDisplayEmoji(!displayEmoji)}
+          >
             😊
           </span>
         </form>
         <button
           onClick={(e) => sendMessage(e)}
-          className="button button-ternary">
+          className="button button-ternary"
+        >
           <img src={Send} alt="send" className="sendButton"></img>
         </button>
       </div>

@@ -8,8 +8,10 @@ import "./Header.css";
 import { useSidebarContext } from "../../Context/SidebarContext";
 import { Model } from "../Model";
 import { CreateChannel } from "../CreateChannel";
+import { useAuthContext } from "../../Context/AuthContext";
 
 export const Header = () => {
+  const { user, loginUser, logoutUser } = useAuthContext();
   const { setState } = useSidebarContext();
   const [model, setModel] = useState();
 
@@ -34,7 +36,8 @@ export const Header = () => {
             <img src={Plus} alt="" className="buttonIcon" />
             <button
               className="button button-primary"
-              onClick={() => setModel(!model)}>
+              onClick={() => setModel(!model)}
+            >
               <span className="buttonText">Create a channel</span>
             </button>
             {/* </NavLink> */}
@@ -44,7 +47,9 @@ export const Header = () => {
               <img src={Avatar} alt="profile" className="profileImage" />
             </div>
             <div class="profileDropdownContent">
-              <button className="link link-danger">Logout</button>
+              <button className="link link-danger" onClick={logoutUser}>
+                Logout
+              </button>
             </div>
           </div>
         </div>

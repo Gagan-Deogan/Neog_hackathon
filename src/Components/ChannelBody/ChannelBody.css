@@ -28,19 +28,26 @@
 
 .emojiIcon {
   position: absolute;
-  left: 1rem;
+  right: 4rem;
+  top: .1rem;
 }
 
 .chatField {
-  width: 80%;
-    background-color: #e8e7e9;
-    padding: 1rem 1rem 1rem 3rem;
-    border-radius: 0.3rem 0 0;
+  width: 100%;
+  background-color: #e8e7e9;
+  padding: 1rem;
+  border-radius: 0.3rem;
   border: 1px solid #e8e7e9;
   color: #696969;
   cursor: pointer;
   font-size: 1.1rem;
 }
+
+.chatField:focus {
+  outline: none;
+  border: 1px solid #4460f1;
+}
+
 
 .button-ternary {
   background: transparent;
@@ -49,7 +56,7 @@
   right: 0;
   height: 100%;
   width: 3rem;
-  border-radius: 0.6rem;
+  border-radius: 0;
   background-color: #4460f1;
   cursor: pointer;
 }
