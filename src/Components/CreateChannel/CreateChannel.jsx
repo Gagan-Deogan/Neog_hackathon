@@ -3,7 +3,6 @@ import { useUploadImageAndAddChannel } from "./useUploadImageAndAddChannel";
 import { reducer, intialState } from "./reducer";
 import "./CreateChannel.css";
 import close from "../../assests/images/close.svg";
-
 export const CreateChannel = ({ setModel }) => {
   const [
     { name, description, schedule, image, scheduleError },
@@ -16,7 +15,6 @@ export const CreateChannel = ({ setModel }) => {
     event.preventDefault();
     hiddenFileInput.current.click();
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (new Date(schedule).getTime() < new Date().getTime()) {
@@ -103,7 +101,7 @@ export const CreateChannel = ({ setModel }) => {
               required
             />
           </div>
-          <button class="button-primary text-center">Create Channel</button>
+          <button class="button-primary text-center mB1">Create Channel</button>
         </form>
       </div>
     </div>

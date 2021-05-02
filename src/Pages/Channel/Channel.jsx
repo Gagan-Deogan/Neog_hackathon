@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import "./channel.css";
+=======
+>>>>>>> 8d70824fa5f7a18bfb0d615b84f732a65e35bc0b
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../Context/AuthContext";
@@ -31,7 +34,8 @@ const AudinceList = ({
               name: user.name,
               image: user.image,
             })
-          }>
+          }
+        >
           Move to Stage
         </button>
       )}
@@ -43,7 +47,8 @@ const AudinceList = ({
               name: user.name,
               image: user.image,
             })
-          }>
+          }
+        >
           Remove From Stage
         </button>
       )}

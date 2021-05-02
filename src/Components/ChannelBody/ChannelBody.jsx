@@ -63,7 +63,27 @@ export const ChannelBody = () => {
               <div
                 className={
                   user.uid == message.senderId ? "sender" : "recipient"
-                }>
+                }
+              >
+                {/* <h2
+                  className={
+                    user.uid == message.senderId
+                      ? "senderName"
+                      : "recipientName"
+                  }
+                >
+                  Suyash Pradhan
+                </h2>
+                <img
+                  src={Profile}
+                  alt="chatSenderAvatar"
+                  className={
+                    user.uid == message.senderId
+                      ? "chatSenderAvatar"
+                      : "chatRecipientAvatar"
+                  }
+                /> */}
+
                 <span className="message"> {message.message}</span>
                 <span className="timestamp">
                   {`${new Date(message.timestamp).toLocaleDateString(
