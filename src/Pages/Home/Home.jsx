@@ -1,5 +1,5 @@
 import { useAuthContext } from "../../Context/AuthContext";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useStatus } from "../../Context/LoaderContext";
 
 export const Home = () => {
@@ -14,6 +14,7 @@ export const Home = () => {
           <NavLink to="/profile">profile</NavLink>
           {!user && <button onClick={loginUser}>Login</button>}
           {user && <button onClick={logoutUser}>Logout</button>}
+          {user && <Link to="/dashboard">Dashboard</Link>}
         </>
       )}
     </>

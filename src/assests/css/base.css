@@ -1,0 +1,46 @@
+@import './utils.css';
+
+:root {
+    --primary: #208FF1;
+    --secondary: #3F3D46;
+    --text-color: #010101;
+    --background-light-gray: #FAFBFD;
+    --background-medium-gray: #f2f2f2;
+    --gray: #E3EBDF;
+    --dark-mode: #111417;
+    --white: #fff;
+    --off-white: #ffffffcc;
+    --black: #010101;
+    --success: #0be881;
+    --warning: #ffcf00;
+    --danger: #ff4d4f;
+    --font-inter: 'Inter',
+        sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link-primary {
+    color: var(--primary);
+}
+
+.link-secondary {
+    color: var(--secondary);
+}
+
+.link-white {
+    color: var(--white);
+}
