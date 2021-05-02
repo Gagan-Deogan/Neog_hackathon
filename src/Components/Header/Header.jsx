@@ -8,11 +8,12 @@ import "./Header.css";
 import { useSidebarContext } from "../../Context/SidebarContext";
 import { Model } from "../Model";
 import { CreateChannel } from "../CreateChannel";
+import { useAuthContext } from "../../Context/AuthContext";
 
 export const Header = () => {
   const { setState } = useSidebarContext();
   const [model, setModel] = useState();
-
+  const { user, logoutUser } = useAuthContext();
   return (
     <>
       <Model isOpenModel={model} setIsOpenModel={setModel}>
@@ -24,10 +25,6 @@ export const Header = () => {
             className="toggleButton"
             onClick={() => setState((toggle) => !toggle)}
           />
-          {/* <form action="#" className="formGroup">
-            <img src={Search} alt="" className="formIcon" />
-            <input type="text" placeholder="Search..." className="formField" />
-          </form> */}
         </div>
         <div className="headerRightWrapper">
           <div className="buttonWrapper">
@@ -41,10 +38,16 @@ export const Header = () => {
           </div>
           <div className="profileDropdown">
             <div className="profile">
-              <img src={Avatar} alt="profile" className="profileImage" />
+              <img
+                src={user.photoURL}
+                alt="profile"
+                className="profileImage border-round"
+              />
             </div>
             <div class="profileDropdownContent">
-              <button className="link link-danger">Logout</button>
+              <button className="link link-danger" onClick={logoutUser}>
+                Logout
+              </button>
             </div>
           </div>
         </div>

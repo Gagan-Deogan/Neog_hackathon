@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Temp from "../../assests/images/temp.svg";
 import { useSidebarContext } from "../../Context/SidebarContext";
 import { useChannelsProvider } from "../../Context/ChannelsContext";
+import { isEventOpen } from "../../Utils/isEventOpen";
 import Logo from "../../assests/images/logo.svg";
 import "./Sidebar.css";
 
@@ -39,7 +40,12 @@ export const Sidebar = () => {
           <h2 className="sidebarSectionTitle">Channels</h2>
 
           {channels &&
-            channels.map((channel) => <ChannelLink channel={channel} />)}
+            channels.map(
+              (channel) =>
+                isEventOpen({ schedule: channel.schedule }) && (
+                  <ChannelLink channel={channel} />
+                )
+            )}
         </div>
       </nav>
     </aside>
