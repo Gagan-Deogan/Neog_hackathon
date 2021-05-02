@@ -31,7 +31,6 @@ export const ChannelProvider = ({ children }) => {
     Messages.onSnapshot((snapshot) => {
       setChannelMessage(
         snapshot.docs.map((doc) => {
-          console.log(doc);
           return { ...doc.data() };
         })
       );

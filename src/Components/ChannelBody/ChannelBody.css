@@ -134,7 +134,9 @@
   color: #696969;
   text-align: center;
 }
-
+.mentorParticipent {
+  display: flex;
+}
 @media screen and (max-width: 600px) and (min-width: 100px) {
   .chatRow {
     grid-template-columns: 1fr !important;

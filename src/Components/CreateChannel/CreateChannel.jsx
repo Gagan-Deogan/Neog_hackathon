@@ -28,7 +28,6 @@ export const CreateChannel = ({ setModel }) => {
 
   const handleFileChange = (e) => {
     if (e.target.files[0]) {
-      console.log(e.target.files[0]);
       dispatch({ type: "ADD_IMAGE", payload: e.target.files[0] });
     }
   };

@@ -7,11 +7,9 @@ import Send from "../../assests/images/send.svg";
 export const ChatBox = () => {
   const [input, setInput] = useState("");
   const { channelDetails } = useChannelContext();
-  console.log(channelDetails);
   const { user } = useAuthContext();
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log("Hihi");
     if (input.length) {
       const sendingData = {
         message: input,
@@ -20,13 +18,12 @@ export const ChatBox = () => {
         userImage: user.photoURL,
         senderId: user.uid,
       };
-      console.log(channelDetails.id);
       db.collection("channels")
         .doc(channelDetails.id)
         .collection("messages")
         .add(sendingData)
         .then(() => {
-          console.log("message sent");
+          setInput("");
         });
     }
   };
