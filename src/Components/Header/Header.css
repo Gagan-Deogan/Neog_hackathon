@@ -1,0 +1,166 @@
+.header {
+    padding: 2.4rem 2rem 2.5rem 2rem;
+    border-bottom: 1px solid #E8E7E9;
+}
+
+.toggleButton {
+    line-height: 2rem;
+    padding: .6rem;
+    font-size: 2.5rem;
+    color: #5c5b5b;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .4rem;
+    box-shadow: 0 0.2rem 0 rgb(0 0 0 / 5%);
+    margin-right: 1rem;
+}
+
+
+.formGroup {
+    position: relative;
+    width: 100%;
+}
+
+.formField {
+    background-color: #F4F4F4;
+    border: 1px solid #F4F4F4;
+    padding: 1rem 3rem 1rem 2.4rem;
+    font-size: 1.2rem;
+    border-radius: .3rem;
+    width: 100%;
+}
+
+.formField::placeholder {
+    color: #696969;
+}
+
+.formIcon {
+    height: .9rem;
+    width: .9rem;
+    position: absolute;
+    top: 1.4rem;
+    left: .9rem;
+}
+
+.formField:focus {
+    border: 1px solid #4460F1;
+    outline: none;
+}
+
+.buttonWrapper {
+    position: relative;
+}
+
+.buttonIcon {
+    height: 1.1rem;
+    width: 1.1rem;
+    position: absolute;
+    top: 1.2rem;
+    left: .9rem;
+}
+
+.headerLeftWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerRightWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-primary {
+    background-color: #4460F1;
+    border: 1px solid #4460F1;
+    padding: .8rem 1rem;
+    width: 14rem;
+    height: 3.5rem;
+    border-radius: .3rem;
+    color: #FFF;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.buttonText {
+    margin-left: .8rem;
+}
+
+
+.profileDropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profileDropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8;
+    min-width: 10rem;
+    right: 0;
+    z-index: 1;
+}
+
+.profileDropdownContent button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: .4rem;
+    cursor: pointer;
+}
+
+
+.profileDropdown:hover .profileDropdownContent {
+    display: block;
+}
+
+.profileImage {
+    height: 2.8rem;
+    width: 2.8rem;
+    margin-left: 1.4rem;
+    cursor: pointer;
+}
+
+.link-danger {
+    background-color: #DA2D2D !important;
+    color: #FFF !important;
+}
+
+@media screen and (max-width:600px) and (min-width:100px) {
+    .button-primary {
+        width: fit-content;
+        border-radius: 6rem;
+        height: 3rem;
+        width: 3rem
+    }
+
+    .buttonIcon {
+        left: .9rem;
+        top: .9rem;
+    }
+
+    .formField {
+        margin-right: 1rem;
+        width: 90%;
+    }
+
+    .buttonText {
+        display: none;
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width:836px) and (min-width:601px) {
+
+    .formField {
+        margin-right: 1rem;
+        width: 90%;
+    }
+
+}

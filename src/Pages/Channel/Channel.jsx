@@ -1,3 +1,4 @@
+import "./channel.css";
 import { useState, useEffect } from "react";
 import { useAuthContext } from "../../Context/AuthContext";
 import { useStatus } from "../../Context/LoaderContext";
@@ -8,6 +9,7 @@ const getChannelById = ({ channelId }) => {
   return db.collection("channels").doc(channelId);
 };
 const getChannelMessages = ({ Channel }) => {
+  console.log(Channel);
   return Channel.collection("messages").orderBy("timestamp", "asc");
 };
 const getChannelAudiances = ({ Channel }) => {
@@ -25,7 +27,6 @@ const AudinceList = ({
   handleRemoveFromStage,
   listFor,
 }) => {
-  console.log({ user });
   return (
     <>
       <h3>{user.name}</h3>
@@ -73,11 +74,17 @@ export const Channel = () => {
     const Audiances = getChannelAudiances({ Channel });
     const Mentors = getChannelMentors({ Channel });
     Channel.onSnapshot((snapshot) => {
+      console.log(snapshot);
       setChannelDetails(snapshot.data());
     });
 
     Messages.onSnapshot((snapshot) => {
-      setRoomMessage(snapshot.docs.map((doc) => doc.data()));
+      setRoomMessage(
+        snapshot.docs.map((doc) => {
+          console.log(doc);
+          return { ...doc.data() };
+        })
+      );
     });
     Audiances.doc(uid).set({
       name: displayName,
@@ -138,48 +145,49 @@ export const Channel = () => {
     Mentors.doc(uid).delete();
     handleAddToAudiances({ uid, name, image });
   };
-
   return (
     <>
-      <h1>{channelId}</h1>
-      {roomMessage?.map((data) => (
-        <p key={data.id}>{data.message}</p>
-      ))}
-      {channelId && <ChatBox channelId={channelId} />}
-      <br />
-      {channelDetails?.owner === uid && (
-        <button
-          onClick={() =>
-            handleMoveToStage({ uid, name: displayName, image: photoURL })
-          }>
-          Move to stage Hand
-        </button>
-      )}
-      {channelDetails?.owner !== uid && (
-        <button onClick={handleHandeRise}>Riase Hand</button>
-      )}
-      <h2>Mentors</h2>
-      {channelMentors &&
-        channelMentors.map((user) => (
-          <AudinceList
-            user={user}
-            currentUser={uid}
-            owner={channelDetails?.owner}
-            handleRemoveFromStage={handleRemoveFromStage}
-            listFor="MENTORS"
-          />
+      <div className="postion-absolute right">
+        <h1>{channelId}</h1>
+        {roomMessage?.map((data) => (
+          <p key={data.id}>{data.message}</p>
         ))}
-      <h2>Audiances</h2>
-      {channelAudiance &&
-        channelAudiance.map((user) => (
-          <AudinceList
-            user={user}
-            currentUser={uid}
-            owner={channelDetails?.owner}
-            handleMoveToStage={handleMoveToStage}
-            listFor="AUDIANCES"
-          />
-        ))}
+        {channelId && <ChatBox channelId={channelId} />}
+        <br />
+        {channelDetails?.owner === uid && (
+          <button
+            onClick={() =>
+              handleMoveToStage({ uid, name: displayName, image: photoURL })
+            }>
+            Move to stage Hand
+          </button>
+        )}
+        {channelDetails?.owner !== uid && (
+          <button onClick={handleHandeRise}>Riase Hand</button>
+        )}
+        <h2>Mentors</h2>
+        {channelMentors &&
+          channelMentors.map((user) => (
+            <AudinceList
+              user={user}
+              currentUser={uid}
+              owner={channelDetails?.owner}
+              handleRemoveFromStage={handleRemoveFromStage}
+              listFor="MENTORS"
+            />
+          ))}
+        <h2>Audiances</h2>
+        {channelAudiance &&
+          channelAudiance.map((user) => (
+            <AudinceList
+              user={user}
+              currentUser={uid}
+              owner={channelDetails?.owner}
+              handleMoveToStage={handleMoveToStage}
+              listFor="AUDIANCES"
+            />
+          ))}
+      </div>
     </>
   );
 };

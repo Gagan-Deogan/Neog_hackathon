@@ -1,0 +1,46 @@
+.card {
+  border-radius: 0.8rem;
+  border: 1px solid #e8e7e9;
+  height: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 250ms ease-in;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.cardImage {
+  padding: 1rem 2rem;
+}
+
+.cardImg {
+  border: none;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.cardBody {
+  padding: 2rem;
+}
+
+.cardTitle {
+  color: #2c292f;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.cardSubtitle {
+  color: #5c5b5b;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.timing {
+  color: #696969;
+  font-size: 0.9rem;
+}
