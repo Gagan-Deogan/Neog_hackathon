@@ -9,11 +9,10 @@ export const Dashboard = () => {
   return (
     <>
       <Sidebar />
-      <Main />
       <Routes>
-        <Route path="/dashboard/create" element={Channels}></Route>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/create" element={<Channels />}></Route>
       </Routes>
-      ;
     </>
   );
 };
