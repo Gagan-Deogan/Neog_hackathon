@@ -1,9 +1,12 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "../Card/Card";
+import { useChannelsProvider } from "../../Context/ChannelsContext";
 import "./CardWrapper.css";
 
 export const CardWrapper = () => {
+  const { channels } = useChannelsProvider();
+
   return (
     <div className="cardWrapper mT4">
       <div className="cardWrapperHeader mB1 flex j-space-between a-items-center">
@@ -13,8 +16,10 @@ export const CardWrapper = () => {
         </Link>
       </div>
 
-      <section className="cards ">
-        <Card />
+      <section className="cards cardRow">
+        {channels?.map((channel) => (
+          <Card channel={channel} />
+        ))}
       </section>
     </div>
   );

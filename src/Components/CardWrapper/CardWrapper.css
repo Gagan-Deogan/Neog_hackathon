@@ -1,9 +1,24 @@
 .cardWrapperTitle {
-    font-size: 1.2rem;
-    font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.cardRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+.seeAll {
+  color: #4460f1;
+  font-size: 1rem;
+}
+@media screen and (max-width: 600px) and (min-width: 100px) {
+  .cardRow {
+    grid-template-columns: 1fr;
+  }
 }
 
-.seeAll {
-    color: #4460F1;
-    font-size: 1rem;
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .cardRow {
+    grid-template-columns: 1fr 1fr;
+  }
 }
