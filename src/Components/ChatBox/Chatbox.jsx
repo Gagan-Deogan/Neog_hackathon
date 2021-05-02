@@ -4,22 +4,19 @@ import { useAuthContext } from "../../Context/AuthContext";
 import { useChannelContext } from "../../Context/ChannelContext";
 import { db } from "../../firebase";
 import Send from "../../assests/images/send.svg";
-import Picker from 'emoji-picker-react';
+import Picker from "emoji-picker-react";
 
 export const ChatBox = () => {
   const [input, setInput] = useState("");
   const [displayEmoji, setDisplayEmoji] = useState(false);
   const { channelDetails } = useChannelContext();
-  const [chosenEmoji, setChosenEmoji] = useState({emoji : '😊'});
-console.log(chosenEmoji)
+  const [chosenEmoji, setChosenEmoji] = useState({ emoji: "😊" });
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject);
   };
-  console.log(channelDetails);
   const { user } = useAuthContext();
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log("Hihi");
     if (input.length) {
       const sendingData = {
         message: input,
@@ -28,25 +25,28 @@ console.log(chosenEmoji)
         userImage: user.photoURL,
         senderId: user.uid,
       };
-      console.log(channelDetails.id);
       db.collection("channels")
         .doc(channelDetails.id)
         .collection("messages")
         .add(sendingData)
         .then(() => {
-          console.log("message sent");
+          setInput("");
         });
     }
   };
   return (
     <>
-     
-      <div className="emoji-picker" onClick={()=> setInput(input + chosenEmoji.emoji)} style={{display : displayEmoji ? 'block' : 'none'}}>
-      <Picker onEmojiClick={onEmojiClick}  />
-    </div>
+      <div
+        className="emoji-picker"
+        onClick={() => setInput(input + chosenEmoji.emoji)}
+        style={{ display: displayEmoji ? "block" : "none" }}>
+        <Picker onEmojiClick={onEmojiClick} />
+      </div>
       <div className="chatMessage">
-      
-        <form action="#" style={{display : 'flex'}} onSubmit={(e) => sendMessage(e)}>
+        <form
+          action="#"
+          style={{ display: "flex" }}
+          onSubmit={(e) => sendMessage(e)}>
           <input
             type="text"
             value={input}
@@ -55,12 +55,15 @@ console.log(chosenEmoji)
             className="chatField"
           />
 
-          <span  className="emojiDisplay"onClick={() => setDisplayEmoji(!displayEmoji)}>😊</span>
+          <span
+            className="emojiDisplay"
+            onClick={() => setDisplayEmoji(!displayEmoji)}>
+            😊
+          </span>
         </form>
         <button
           onClick={(e) => sendMessage(e)}
-          className="button button-ternary"
-        >
+          className="button button-ternary">
           <img src={Send} alt="send" className="sendButton"></img>
         </button>
       </div>

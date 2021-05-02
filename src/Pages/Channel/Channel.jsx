@@ -31,8 +31,7 @@ const AudinceList = ({
               name: user.name,
               image: user.image,
             })
-          }
-        >
+          }>
           Move to Stage
         </button>
       )}
@@ -44,8 +43,7 @@ const AudinceList = ({
               name: user.name,
               image: user.image,
             })
-          }
-        >
+          }>
           Remove From Stage
         </button>
       )}
@@ -53,7 +51,6 @@ const AudinceList = ({
   );
 };
 export const Channel = () => {
-  console.log("Hello");
   const { state } = useSidebarContext();
   const { channelId } = useParams();
   const {
@@ -106,42 +103,6 @@ export const Channel = () => {
   // }, [channelId]);
 
   // this neeed
-  // const handleHandeRise = () => {
-  //   const Channel = getChannelById({ channelId });
-  //   const Audiances = getChannelAudiances({ Channel });
-  //   Audiances.doc(uid).update({
-  //     handRaise: true,
-  //   });
-  // };
-  // const handleRemoveFromAudiances = ({ uid }) => {
-  //   const Channel = getChannelById({ channelId });
-  //   const Audiances = getChannelAudiances({ Channel });
-  //   Audiances.doc(uid).delete();
-  // };
-  // const handleMoveToStage = ({ uid, name, image }) => {
-  //   const Channel = getChannelById({ channelId });
-  //   const Mentors = getChannelMentors({ Channel });
-  //   Mentors.doc(uid).set({
-  //     name,
-  //     image,
-  //   });
-  //   handleRemoveFromAudiances({ uid });
-  // };
-  // const handleAddToAudiances = ({ uid, image, name }) => {
-  //   const Channel = getChannelById({ channelId });
-  //   const Audiances = getChannelAudiances({ Channel });
-  //   Audiances.doc(uid).set({
-  //     name: name,
-  //     image: image,
-  //   });
-  // };
-  // const handleRemoveFromStage = ({ uid, name, image }) => {
-  //   console.log({ uid, name, image });
-  //   const Channel = getChannelById({ channelId });
-  //   const Mentors = getChannelMentors({ Channel });
-  //   Mentors.doc(uid).delete();
-  //   handleAddToAudiances({ uid, name, image });
-  // };
 
   // const totalParticipants = channelAudiance?.length + channelMentors?.length;
 

@@ -140,15 +140,15 @@
 
 .senderName {
   position: absolute;
-  top: .5rem;
+  top: 0.5rem;
   left: -10rem;
   font-size: 1rem;
   font-weight: 400;
   background-color: #eee;
   color: #363636;
   font-weight: 600;
-  padding: .6rem;
-  border-radius: .3rem;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
 }
 
 .chatSenderAvatar {
@@ -163,18 +163,17 @@
   bottom: 0;
 }
 
-
 .recipientName {
   position: absolute;
-  top: .5rem;
+  top: 0.5rem;
   right: -10rem;
   font-size: 1rem;
   font-weight: 400;
   background-color: #eee;
   color: #363636;
   font-weight: 600;
-  padding: .6rem;
-  border-radius: .3rem;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
 }
 
 .chatRecipientAvatar {

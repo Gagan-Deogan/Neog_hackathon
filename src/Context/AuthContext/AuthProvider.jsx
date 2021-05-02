@@ -35,7 +35,6 @@ export const AuthProvider = ({ children }) => {
     const unSubscribe = auth.onAuthStateChanged((user) => {
       setUser(user);
       setStatus("IDLE");
-      console.log({ pathname: location.pathname });
       if (location.pathname.length > 1) {
         navigate(location.pathname);
       } else {
