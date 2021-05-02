@@ -1,0 +1,584 @@
+/*Utilities Classes*/
+
+/* ------------ Padding/Margin Classes -----------*/
+.p1 {
+    padding: 1rem;
+}
+
+.p2 {
+    padding: 2rem;
+}
+
+.p3 {
+    padding: 3rem;
+}
+
+.p4 {
+    padding: 4rem;
+}
+
+.pT1 {
+    padding-top: 1rem;
+}
+
+.pT2 {
+    padding-top: 2rem;
+}
+
+.pT3 {
+    padding-top: 3rem;
+}
+
+.pT4 {
+    padding-top: 4rem;
+}
+
+.pR1 {
+    padding-right: 1rem;
+}
+
+.pR2 {
+    padding-right: 2rem;
+}
+
+.pR3 {
+    padding-right: 3rem;
+}
+
+.pR4 {
+    padding-right: 4rem;
+}
+
+.pB1 {
+    padding-bottom: 1rem;
+}
+
+.pB2 {
+    padding-bottom: 2rem;
+}
+
+.pB3 {
+    padding-bottom: 3rem;
+}
+
+.pB4 {
+    padding-bottom: 4rem;
+}
+
+.pL1 {
+    padding-left: 1rem;
+}
+
+.pL2 {
+    padding-left: 2rem;
+}
+
+.pL3 {
+    padding-left: 3rem;
+}
+
+.pL4 {
+    padding-left: 4rem;
+}
+
+.m1 {
+    margin: 1rem;
+}
+
+.m2 {
+    margin: 2rem;
+}
+
+.m3 {
+    margin: 3rem;
+}
+
+.m4 {
+    margin: 4rem;
+}
+
+.mT1 {
+    margin-top: 1rem;
+}
+
+.mT2 {
+    margin-top: 2rem;
+}
+
+.mT3 {
+    margin-top: 3rem;
+}
+
+.mT4 {
+    margin-top: 4rem;
+}
+
+.mR1 {
+    margin-right: 1rem;
+}
+
+.mR2 {
+    margin-right: 2rem;
+}
+
+.mR3 {
+    margin-right: 3rem;
+}
+
+.mR4 {
+    margin-right: 4rem;
+}
+
+.mB1 {
+    margin-bottom: 1rem;
+}
+
+.mB2 {
+    margin-bottom: 2rem;
+}
+
+.mB3 {
+    margin-bottom: 3rem;
+}
+
+.mB4 {
+    margin-bottom: 4rem;
+}
+
+.mL1 {
+    margin-left: 1rem;
+}
+
+.mL2 {
+    margin-left: 2rem;
+}
+
+.mL3 {
+    margin-left: 3rem;
+}
+
+.mL4 {
+    margin-left: 4rem;
+}
+
+/*Wrapper*/
+.wrapper {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+}
+
+.wrapper-fluid {
+    max-width: 77.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+}
+
+
+/*Flex Classes*/
+.flex {
+    display: flex;
+}
+
+.f-row {
+    flex-direction: row;
+}
+
+.j-content-start {
+    justify-content: start;
+}
+
+.j-content-end {
+    justify-content: flex-end;
+}
+
+.j-content-center {
+    justify-content: center;
+}
+
+.j-space-between {
+    justify-content: space-between;
+}
+
+.j-space-around {
+    justify-content: space-around;
+}
+
+.a-items-center {
+    align-items: center;
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+/*Links*/
+
+.link {
+    font-size: 1.1rem;
+}
+
+.primary-link {
+    color: var(--text-color);
+}
+
+.secondary-link {
+    color: var(--secondary);
+}
+
+/*Typography*/
+
+.f-weight600 {
+    font-weight: 600;
+}
+
+.big-title {
+    font-size: 6rem;
+}
+
+.paragraph {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*Grid*/
+
+.row {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.sm-1,
+.sm-2,
+.sm-3,
+.sm-4,
+.sm-5,
+.sm-6,
+.sm-7,
+.sm-8,
+.sm-9,
+.sm-10,
+.sm-11,
+.sm-12,
+.md-1,
+.md-2,
+.md-3,
+.md-4,
+.md-5,
+.md-6,
+.md-7,
+.md-8,
+.md-9,
+.md-10,
+.md-11,
+.md-12,
+.lg-1,
+.lg-2,
+.lg-3,
+.lg-4,
+.lg-5,
+.lg-6,
+.lg-7,
+.lg-8,
+.lg-9,
+.lg-10,
+.lg-11,
+.lg-12,
+.xl-1,
+.xl-2,
+.xl-3,
+.xl-4,
+.xl-5,
+.xl-6,
+.xl-7,
+.xl-8,
+.xl-9,
+.xl-10,
+.xl-11,
+.xl-12 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+}
+
+.col-1 {
+    flex: 0 0 8.33%;
+}
+
+.col-2 {
+    flex: 0 0 16.66%;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+}
+
+.col-4 {
+    flex: 0 0 33.33%;
+}
+
+.col-5 {
+    flex: 0 0 41.66%;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+}
+
+.col-7 {
+    flex: 0 0 58.33%;
+}
+
+.col-8 {
+    flex: 0 0 66.66%;
+}
+
+.col-9 {
+    flex: 0 0 75%;
+}
+
+.col-10 {
+    flex: 0 0 83.33%;
+}
+
+.col-11 {
+    flex: 0 0 91.66%;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+}
+
+/* ---- Media Query For Device Width from 34.37(550px)----  */
+@media (min-width: 34.37rem) {
+    .sm-1 {
+        flex: 0 0 8.33%;
+    }
+
+    .sm-2 {
+        flex: 0 0 16.66%;
+    }
+
+    .sm-3 {
+        flex: 0 0 25%;
+    }
+
+    .sm-4 {
+        flex: 0 0 33.33%;
+    }
+
+    .sm-5 {
+        flex: 0 0 41.66%;
+    }
+
+    .sm-6 {
+        flex: 0 0 50%;
+    }
+
+    .sm-7 {
+        flex: 0 0 58.33%;
+    }
+
+    .sm-8 {
+        flex: 0 0 66.66%;
+    }
+
+    .sm-9 {
+        flex: 0 0 75%;
+    }
+
+    .sm-10 {
+        flex: 0 0 83.33%;
+    }
+
+    .sm-11 {
+        flex: 0 0 91.66%;
+    }
+
+    .sm-12 {
+        flex: 0 0 100%;
+    }
+}
+
+/* ---- Media Query For Device Width from 48rem(768px)----  */
+@media (min-width: 48rem) {
+    .md-1 {
+        flex: 0 0 8.33%;
+    }
+
+    .md-2 {
+        flex: 0 0 16.66%;
+    }
+
+    .md-3 {
+        flex: 0 0 25%;
+    }
+
+    .md-4 {
+        flex: 0 0 33.33%;
+    }
+
+    .md-5 {
+        flex: 0 0 41.66%;
+    }
+
+    .md-6 {
+        flex: 0 0 50%;
+    }
+
+    .md-7 {
+        flex: 0 0 58.33%;
+    }
+
+    .md-8 {
+        flex: 0 0 66.66%;
+    }
+
+    .md-9 {
+        flex: 0 0 75%;
+    }
+
+    .md-10 {
+        flex: 0 0 83.33%;
+    }
+
+    .md-11 {
+        flex: 0 0 91.66%;
+    }
+
+    .md-12 {
+        flex: 0 0 100%;
+    }
+}
+
+/* ---- Media Query For Device Width from 62.5rem(1000px)----  */
+@media (min-width: 62.5rem) {
+    .lg-1 {
+        flex: 0 0 8.33%;
+    }
+
+    .lg-2 {
+        flex: 0 0 16.66%;
+    }
+
+    .lg-3 {
+        flex: 0 0 25%;
+    }
+
+    .lg-4 {
+        flex: 0 0 33.33%;
+    }
+
+    .lg-5 {
+        flex: 0 0 41.66%;
+    }
+
+    .lg-6 {
+        flex: 0 0 50%;
+    }
+
+    .lg-7 {
+        flex: 0 0 58.33%;
+    }
+
+    .lg-8 {
+        flex: 0 0 66.66%;
+    }
+
+    .lg-9 {
+        flex: 0 0 75%;
+    }
+
+    .lg-10 {
+        flex: 0 0 83.33%;
+    }
+
+    .lg-11 {
+        flex: 0 0 91.66%;
+    }
+
+    .lg-12 {
+        flex: 0 0 100%;
+    }
+}
+
+/* ---- Media Query For Device Width from 77.5rem(1240px) ----  */
+@media (min-width: 77.5rem) {
+    .xl-1 {
+        flex: 0 0 8.33%;
+    }
+
+    .xl-2 {
+        flex: 0 0 16.66%;
+    }
+
+    .xl-3 {
+        flex: 0 0 25%;
+    }
+
+    .xl-4 {
+        flex: 0 0 33.33%;
+    }
+
+    .xl-5 {
+        flex: 0 0 41.66%;
+    }
+
+    .xl-6 {
+        flex: 0 0 50%;
+    }
+
+    .xl-7 {
+        flex: 0 0 58.33%;
+    }
+
+    .xl-8 {
+        flex: 0 0 66.66%;
+    }
+
+    .xl-9 {
+        flex: 0 0 75%;
+    }
+
+    .xl-10 {
+        flex: 0 0 83.33%;
+    }
+
+    .xl-11 {
+        flex: 0 0 91.66%;
+    }
+
+    .xl-12 {
+        flex: 0 0 100%;
+    }
+}

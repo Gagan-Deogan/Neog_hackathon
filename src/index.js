@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext";
 import { LoaderProvider } from "./Context/LoaderContext";
+import { SidebarContextProvider } from "./Context/SidebarContext";
 import App from "./App";
 
 ReactDOM.render(
@@ -11,7 +12,9 @@ ReactDOM.render(
     <Router>
       <LoaderProvider>
         <AuthProvider>
-          <App />
+          <SidebarContextProvider>
+            <App />
+          </SidebarContextProvider>
         </AuthProvider>
       </LoaderProvider>
     </Router>

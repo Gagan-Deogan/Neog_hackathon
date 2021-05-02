@@ -1,5 +1,5 @@
 import { useAuthContext } from "../../Context/AuthContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useStatus } from "../../Context/LoaderContext";
 import banner from "../../assests/images/banner.svg";
 import "./index.css";
@@ -28,6 +28,7 @@ export const Home = () => {
             </button>
           )}
           {user && <button onClick={logoutUser}>Logout</button>}
+          {user && <Link to="/dashboard">Dashboard</Link>}
         </div>
       </div>
     </>
