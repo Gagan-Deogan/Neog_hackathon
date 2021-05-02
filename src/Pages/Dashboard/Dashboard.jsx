@@ -1,19 +1,22 @@
-import React from "react";
+import "./Dashboard.css";
 import { Main } from "../../Components/Main/Main";
 import { Sidebar } from "../../Components/Sidebar";
-import "./Dashboard.css";
-import { Routes, Route } from "react-router-dom";
-import { Channel } from "../Channel/Channel";
-
+import { ProtectedRoute } from "../../Components/ProtectedRoute";
+import { Routes } from "react-router-dom";
+import { Channel } from "../Channel";
+import { ChannelsProvider } from "../../Context/ChannelsContext";
 export const Dashboard = () => {
   return (
     <>
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
-
-        <Route path="/channelName" element={<Channel />}></Route>
-      </Routes>
+      <ChannelsProvider>
+        <Sidebar />
+        <Routes>
+          <ProtectedRoute path="/" element={<Main />} />
+          <ProtectedRoute
+            path="/channel/:channelId"
+            element={<Channel />}></ProtectedRoute>
+        </Routes>
+      </ChannelsProvider>
     </>
   );
 };
