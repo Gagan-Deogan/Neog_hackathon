@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./Context/AuthContext";
 import { LoaderProvider } from "./Context/LoaderContext";
 import { SidebarContextProvider } from "./Context/SidebarContext";
+import { SnakbarContextProvider } from "./Context/SnakbarContext";
 import App from "./App";
 
 ReactDOM.render(
@@ -12,9 +13,11 @@ ReactDOM.render(
     <Router>
       <LoaderProvider>
         <AuthProvider>
-          <SidebarContextProvider>
-            <App />
-          </SidebarContextProvider>
+          <SnakbarContextProvider>
+            <SidebarContextProvider>
+              <App />
+            </SidebarContextProvider>
+          </SnakbarContextProvider>
         </AuthProvider>
       </LoaderProvider>
     </Router>

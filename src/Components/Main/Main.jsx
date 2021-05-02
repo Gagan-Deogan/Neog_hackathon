@@ -1,7 +1,4 @@
 import "./Main.css";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { db } from "../../firebase";
 import { Header } from "../Header";
 import { Greeting } from "../Greeting";
 import { CardWrapper } from "../CardWrapper";

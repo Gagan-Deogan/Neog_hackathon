@@ -1,10 +1,10 @@
-import React from "react";
+import "./Dashboard.css";
+import { useState } from "react";
 import { Main } from "../../Components/Main/Main";
 import { Sidebar } from "../../Components/Sidebar";
+import { Model } from "../../Components/Model";
 import { ProtectedRoute } from "../../Components/ProtectedRoute";
-import "./Dashboard.css";
 import { Routes, Route } from "react-router-dom";
-import { Channels } from "../../Components/Channels";
 import { Channel } from "../Channel";
 import { ChannelsProvider } from "../../Context/ChannelsContext";
 export const Dashboard = () => {
@@ -14,7 +14,7 @@ export const Dashboard = () => {
         <Sidebar />
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/create" element={<Channels />}></Route>
+          {/* <Route path="/create" element={}></Route> */}
           <ProtectedRoute
             path="/channel/:channelId"
             element={<Channel />}></ProtectedRoute>

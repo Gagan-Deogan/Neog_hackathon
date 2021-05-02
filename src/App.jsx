@@ -1,14 +1,15 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useStatus } from "./Context/LoaderContext";
+import "./assests/css/base.css";
+import { Routes, Route } from "react-router-dom";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { Home } from "./Pages/Home";
 import { Profile } from "./Pages/Profile";
 import { Dashboard } from "./Pages/Dashboard";
-import "./assests/css/base.css";
 import { Channels } from "./Components/Channels";
+import { Snakbar } from "./Components/Snakbar";
+import { useSnakbarContext } from "./Context/SnakbarContext";
 
 const App = () => {
-  const { status } = useStatus();
+  const { snakbarStatus } = useSnakbarContext();
   return (
     <div className="App">
       <Routes>
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/create" element={<Channels />}></Route>
         </Route>
       </Routes>
+      {snakbarStatus["isShow"] === true && <Snakbar></Snakbar>}
     </div>
   );
 };
