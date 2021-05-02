@@ -3,7 +3,6 @@ import Emoji from "../../assests/images/emoji.svg";
 import Send from "../../assests/images/send.svg";
 import Profile from "../../assests/images/profile.svg";
 import Picker from "emoji-picker-react";
-
 import "./ChannelBody.css";
 
 export const ChannelBody = () => {

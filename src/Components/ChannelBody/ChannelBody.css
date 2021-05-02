@@ -7,14 +7,14 @@
 
 .chatRowLeft {
     border-right: 1px solid #E8E7E9;
-    height: calc(100vh - 12rem);
+    height: calc(100vh - 10rem);
     padding: 0 1rem;
 }
 
 .chatBody {
-    height: calc(100vh - 18rem);
+    height: calc(100vh - 14rem);
     overflow: auto;
-    padding: 0 1rem;
+    padding: 1rem;
 }
 
 .chatMessage {
@@ -81,6 +81,7 @@
     position: absolute;
     bottom: -1.6rem;
     left: 1rem;
+    font-size: .9rem;
     color: #696969;
 }
 
@@ -132,4 +133,40 @@
     font-weight: 400;
     color: #696969;
     text-align: center;
+}
+
+@media screen and (max-width:600px) and (min-width:100px) {
+    .chatRow {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sender {
+        padding: 1rem !important;
+    }
+
+    .message {
+        font-size: 1rem !important;
+    }
+
+    .recipient {
+        padding: 1rem !important;
+    }
+}
+
+@media screen and (max-width:900px) and (min-width:601px) {
+    .chatRow {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sender {
+        padding: 1rem !important;
+    }
+
+    .message {
+        font-size: 1rem !important;
+    }
+
+    .recipient {
+        padding: 1rem !important;
+    }
 }
