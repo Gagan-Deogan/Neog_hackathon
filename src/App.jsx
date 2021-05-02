@@ -6,6 +6,7 @@ import { Profile } from "./Pages/Profile";
 import { Dashboard } from "./Pages/Dashboard";
 import "./assests/css/base.css";
 import { Channels } from "./Components/Channels";
+import { Channel } from "./Pages/Channel/Channel";
 
 const App = () => {
   const { status } = useStatus();
@@ -16,6 +17,7 @@ const App = () => {
         <ProtectedRoute path="/profile" element={<Profile />} />
         <Route path="/dashboard/*" element={<Dashboard />}>
           <Route path="/create" element={<Channels />}></Route>
+          <Route path="/channelName" element={<Channel />}></Route>
         </Route>
       </Routes>
     </div>

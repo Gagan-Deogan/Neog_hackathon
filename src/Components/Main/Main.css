@@ -6,7 +6,8 @@
     overflow: auto;
     left: 20rem;
     width: calc(100% - 21rem);
-    transition: left 300ms ease-in;
+    transition: width .4s cubic-bezier(.25, .8, .25, 1),
+        left .4s cubic-bezier(.25, .8, .25, 1);
 }
 
 .mainToggled {
