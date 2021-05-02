@@ -69,6 +69,7 @@
   border-radius: 1rem 1rem 0 1rem;
   position: relative;
   margin-bottom: 3rem;
+  margin-right: 2.2rem;
 }
 
 .message {
@@ -96,6 +97,7 @@
   border-radius: 0 1rem 1rem 1rem;
   position: relative;
   margin-bottom: 3rem;
+  margin-left: 2.2rem;
 }
 
 .participantsHeader {
@@ -134,6 +136,57 @@
   font-weight: 400;
   color: #696969;
   text-align: center;
+}
+
+.senderName {
+  position: absolute;
+  top: .5rem;
+  left: -10rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #eee;
+  color: #363636;
+  font-weight: 600;
+  padding: .6rem;
+  border-radius: .3rem;
+}
+
+.chatSenderAvatar {
+  height: 2.8rem;
+  width: 2.8rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-left: auto;
+  position: absolute;
+  right: -3.1rem;
+  bottom: 0;
+}
+
+
+.recipientName {
+  position: absolute;
+  top: .5rem;
+  right: -10rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #eee;
+  color: #363636;
+  font-weight: 600;
+  padding: .6rem;
+  border-radius: .3rem;
+}
+
+.chatRecipientAvatar {
+  height: 2.8rem;
+  width: 2.8rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-left: auto;
+  position: absolute;
+  left: -3.1rem;
+  bottom: 0;
 }
 
 @media screen and (max-width: 600px) and (min-width: 100px) {

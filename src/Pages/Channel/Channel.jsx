@@ -31,7 +31,8 @@ const AudinceList = ({
               name: user.name,
               image: user.image,
             })
-          }>
+          }
+        >
           Move to Stage
         </button>
       )}
@@ -43,7 +44,8 @@ const AudinceList = ({
               name: user.name,
               image: user.image,
             })
-          }>
+          }
+        >
           Remove From Stage
         </button>
       )}

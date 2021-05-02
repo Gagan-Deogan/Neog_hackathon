@@ -5,59 +5,93 @@
   box-sizing: border-box;
 }
 
+.pageLogo {
+  margin: 5rem 0 15rem 0;
+  width: 15rem;
+}
+
 .Login {
   display: flex;
   height: 95vh;
 }
+
 .bannerImageWrapper {
   display: flex;
   flex-direction: column;
   align-items: start;
   height: 100vh;
   width: 60vw;
-  border: 2px solid #e8e7e9;
+  border: 1px solid #e8e7e9;
 }
+
 .bannerImage {
   width: 70%;
   margin: auto;
 }
+
 .footer {
-  padding: 24px;
+  padding: 0;
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+
 }
+
+.footer p {
+  color: #696969;
+  font-size: .9rem;
+}
+
 .loginContent {
   width: 30vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: stretch;
   margin: auto;
-  height: 30vh;
+  height: 100vh;
 }
-.loginContent h1 {
+
+.loginHeader {
   font-weight: 400;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
-.loginContent p {
+
+.loginDescription {
   font-weight: 400;
   color: #696969;
+  font-size: 1.5rem;
 }
+
 .loginContent button {
-  background-color: #d3d3d3;
+  background-color: #eee;
+  border: 1px solid #ebebeb;
+  box-shadow: 0px 0px 0px 1px #e7e7e9 inset;
+  font-weight: 500;
+  color: #333;
+  font-size: 1.3rem;
   border: 0;
-  padding: 15px;
+  padding: 1.2rem;
   border-radius: 3px;
-  margin: 20px 0 0 0;
-  display: flex;
-  justify-content: center;
+  margin: 3rem 0 0 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
 }
+
 hr {
   color: #d3d3d3;
   margin: 5px;
   height: 80vh;
   align-self: center;
 }
+
 .googleIcon {
-  width: 40px;
-  padding: 0 10px;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: .2rem 1rem 0 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -65,13 +99,16 @@ hr {
     flex-direction: column-reverse;
     height: 80vh;
   }
+
   hr {
     display: none;
   }
+
   .bannerImageWrapper {
     height: unset;
     width: unset;
   }
+
   .loginContent {
     width: 90vw;
   }
