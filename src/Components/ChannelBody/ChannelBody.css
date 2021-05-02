@@ -1,0 +1,135 @@
+.chatRow {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    grid-gap: 1rem;
+    height: 100%;
+}
+
+.chatRowLeft {
+    border-right: 1px solid #E8E7E9;
+    height: calc(100vh - 12rem);
+    padding: 0 1rem;
+}
+
+.chatBody {
+    height: calc(100vh - 18rem);
+    overflow: auto;
+    padding: 0 1rem;
+}
+
+.chatMessage {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    position: relative;
+}
+
+.emojiIcon {
+    position: absolute;
+    left: 1rem;
+}
+
+.chatField {
+    width: 100%;
+    background-color: #E8E7E9;
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: .3rem;
+    border: 1px solid #E8E7E9;
+    color: #696969;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.button-ternary {
+    background: transparent;
+    border: 1px solid #4460F1;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 3rem;
+    border-radius: .6rem;
+    background-color: #4460F1;
+    cursor: pointer;
+}
+
+.sendButton {
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.sender {
+    background-color: #4460F1;
+    max-width: 22rem;
+    margin-left: auto;
+    padding: 1.6rem;
+    color: #FFF;
+    margin-bottom: 0;
+    border-radius: 1rem 1rem 0 1rem;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.message {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    display: block;
+}
+
+.timestamp {
+    position: absolute;
+    bottom: -1.6rem;
+    left: 1rem;
+    color: #696969;
+}
+
+.recipient {
+    background-color: #EFF2F9;
+    max-width: 22rem;
+    margin-right: auto;
+    padding: 1.6rem;
+    color: #5c5b5b;
+    margin-bottom: 0;
+    border-radius: 0 1rem 1rem 1rem;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.participantsHeader {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    font-weight: 500;
+}
+
+.participantsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.singleParticipant {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.singleParticipant:hover {
+    background-color: #ebebeb;
+}
+
+.participantImage {
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.participantName {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #696969;
+    text-align: center;
+}

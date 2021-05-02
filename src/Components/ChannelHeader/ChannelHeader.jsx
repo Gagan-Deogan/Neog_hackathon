@@ -1,13 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import Search from "../../assests/images/search.svg";
+import { Link, NavLink } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
-import Plus from "../../assests/images/plus.svg";
 import Avatar from "../../assests/images/profile.svg";
-import "./Header.css";
+import "../Header/Header.css";
+import "./ChannelHeader.css";
 import { useSidebarContext } from "../../Context/SidebarContext";
+import Home from "../../assests/images/home.svg";
 
-export const Header = () => {
+export const ChannelHeader = () => {
   const { setState } = useSidebarContext();
 
   return (
@@ -17,20 +17,21 @@ export const Header = () => {
           className="toggleButton"
           onClick={() => setState((toggle) => !toggle)}
         />
-        <form action="#" className="formGroup">
-          <img src={Search} alt="" className="formIcon" />
-          <input type="text" placeholder="Search..." className="formField" />
-        </form>
+        <div className="channelInfo">
+          <h1 className="channelName">
+            Get started with coding by building a simple todo-app
+          </h1>
+          <h2 className="channelOwnerHeader">Gagandeep Singh</h2>
+          <p className="participants">
+            <FaIcons.FaUser /> 28 participants
+          </p>
+        </div>
       </div>
       <div className="headerRightWrapper">
-        <div className="buttonWrapper">
-          <NavLink to="/dashboard/create">
-            <img src={Plus} alt="" className="buttonIcon" />
-            <button className="button button-primary">
-              <span className="buttonText">Create a channel</span>
-            </button>
-          </NavLink>
-        </div>
+        <Link to="/dashboard">
+          <img src={Home} className="icon" alt="home"></img>
+          <span className="navLink">Home</span>
+        </Link>
         <div className="profileDropdown">
           <div className="profile">
             <img src={Avatar} alt="profile" className="profileImage" />
