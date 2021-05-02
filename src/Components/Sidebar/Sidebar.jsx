@@ -3,6 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Temp from "../../assests/images/temp.svg";
 import { useSidebarContext } from "../../Context/SidebarContext";
+import Logo from "../../assests/images/logo.svg";
 import "./Sidebar.css";
 
 export const Sidebar = () => {
@@ -10,8 +11,8 @@ export const Sidebar = () => {
 
   return (
     <aside className={state ? "sidebarToggled" : "sidebar"}>
-      <div className="sidebarHeader mT1 pB3 flex j-space-between a-items-center">
-        <FaIcons.FaBlog className="toggleButton" />
+      <div className="sidebarHeader  flex j-space-between a-items-center">
+        <img src={Logo} alt="logo" className="logo"></img>
       </div>
       <nav>
         <div className="sidebarSection">

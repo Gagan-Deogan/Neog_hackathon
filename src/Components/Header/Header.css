@@ -1,6 +1,7 @@
 .header {
-    padding: 2.4rem 2rem 2.5rem 2rem;
+    padding: 1.4rem 2rem 1.4rem 2rem;
     border-bottom: 1px solid #E8E7E9;
+    height: 6rem;
 }
 
 .toggleButton {
@@ -133,34 +134,7 @@
 }
 
 @media screen and (max-width:600px) and (min-width:100px) {
-    .button-primary {
-        width: fit-content;
-        border-radius: 6rem;
-        height: 3rem;
-        width: 3rem
+    .title {
+        font-size: 1.4rem !important;
     }
-
-    .buttonIcon {
-        left: .9rem;
-        top: .9rem;
-    }
-
-    .formField {
-        margin-right: 1rem;
-        width: 90%;
-    }
-
-    .buttonText {
-        display: none;
-        font-size: .9rem;
-    }
-}
-
-@media screen and (max-width:836px) and (min-width:601px) {
-
-    .formField {
-        margin-right: 1rem;
-        width: 90%;
-    }
-
 }
