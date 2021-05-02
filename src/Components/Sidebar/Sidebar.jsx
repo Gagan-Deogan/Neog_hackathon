@@ -13,7 +13,7 @@ const ChannelLink = ({ channel }) => {
     <NavLink to={"channel/" + channel.id}>
       <div className="channels flex j-space-between">
         <div className="channelsLeftWrap">
-          <img src={Temp} alt="" className="channelImage" />
+          <img src={channel.imageUrl} alt="" className="channelImage" />
         </div>
         <div className="channelsRightWrap">
           <h1 className="channelTitle">{channel.name}</h1>

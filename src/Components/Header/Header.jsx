@@ -11,6 +11,7 @@ import { CreateChannel } from "../CreateChannel";
 import { useAuthContext } from "../../Context/AuthContext";
 
 export const Header = () => {
+  const { user, loginUser, logoutUser } = useAuthContext();
   const { setState } = useSidebarContext();
   const [model, setModel] = useState();
   const { user, logoutUser } = useAuthContext();
@@ -31,7 +32,8 @@ export const Header = () => {
             <img src={Plus} alt="" className="buttonIcon" />
             <button
               className="button button-primary"
-              onClick={() => setModel(!model)}>
+              onClick={() => setModel(!model)}
+            >
               <span className="buttonText">Create a channel</span>
             </button>
             {/* </NavLink> */}

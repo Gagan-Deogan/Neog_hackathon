@@ -59,6 +59,7 @@
     width: 2rem;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
 }
 
 .channelsRightWrap {
