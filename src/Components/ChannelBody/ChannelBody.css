@@ -9,6 +9,7 @@
   border-right: 1px solid #e8e7e9;
   height: calc(100vh - 10rem);
   padding: 0 1rem;
+  position: relative;
 }
 
 .chatBody {
@@ -31,10 +32,10 @@
 }
 
 .chatField {
-  width: 100%;
-  background-color: #e8e7e9;
-  padding: 1rem 1rem 1rem 3rem;
-  border-radius: 0.3rem;
+  width: 80%;
+    background-color: #e8e7e9;
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: 0.3rem 0 0;
   border: 1px solid #e8e7e9;
   color: #696969;
   cursor: pointer;

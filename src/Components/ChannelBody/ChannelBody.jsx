@@ -5,6 +5,7 @@ import Emoji from "../../assests/images/emoji.svg";
 import Send from "../../assests/images/send.svg";
 import Profile from "../../assests/images/profile.svg";
 import Picker from "emoji-picker-react";
+import marked from "marked";
 import { useAuthContext } from "../../Context/AuthContext";
 import { useChannelContext } from "../../Context/ChannelContext";
 import { ChatBox } from "../ChatBox";
@@ -18,19 +19,6 @@ const SingleParticipent = ({ participant }) => {
         className="participantImage border-round"
       />
       <h1 className="participantName">{participant.name}</h1>
-    </div>
-  );
-};
-const MentorsParticipent = ({ participant, showRemove }) => {
-  return (
-    <div className="row p1">
-      <img
-        src={participant.image}
-        alt="participantName"
-        className="participantImage border-round"
-      />
-      <h1 className="participantName pL1">{participant.name}</h1>
-      {showRemove && <button>Remove</button>}
     </div>
   );
 };
@@ -64,7 +52,11 @@ export const ChannelBody = () => {
                   className={
                     user.uid == message.senderId ? "sender" : "recipient"
                   }>
-                  <span className="message"> {message.message}</span>
+                  <div
+                    className="message"
+                    dangerouslySetInnerHTML={{
+                      __html: marked(message.message),
+                    }}></div>
                   <span className="timestamp">
                     {`${new Date(message.timestamp).toLocaleDateString(
                       "en-US"
@@ -72,23 +64,6 @@ export const ChannelBody = () => {
                       "en-US"
                     )}`}{" "}
                   </span>
-                  <h2
-                    className={
-                      user.uid === message.senderId
-                        ? "senderName"
-                        : "recipientName"
-                    }>
-                    {message.username}
-                  </h2>
-                  <img
-                    src={message.userImage}
-                    alt="chatSenderAvatar"
-                    className={
-                      user.uid === message.senderId
-                        ? "chatSenderAvatar"
-                        : "chatRecipientAvatar"
-                    }
-                  />
                 </div>
               </>
             ))}
@@ -97,17 +72,6 @@ export const ChannelBody = () => {
           <ChatBox />
         </div>
         <div className="chatRowRight">
-          <h1 className="participantsHeader">
-            Mentor ({channelAudiance?.length})
-          </h1>
-          <div className="column align-start">
-            {channelAudiance?.map((participant) => (
-              <MentorsParticipent
-                participant={participant}
-                showRemove={user.uid === channelDetails.owner}
-              />
-            ))}
-          </div>
           <h1 className="participantsHeader">
             Audiances ({channelAudiance?.length})
           </h1>
