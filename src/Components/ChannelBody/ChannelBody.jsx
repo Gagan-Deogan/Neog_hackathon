@@ -48,7 +48,6 @@ export const ChannelBody = () => {
     setChosenEmoji(emojiObject);
   };
   const chatRef = useRef(null);
-
   useEffect(() => {
     chatRef?.current?.scrollIntoView({
       behavior: "smooth",
@@ -60,39 +59,38 @@ export const ChannelBody = () => {
         <div className="chatRowLeft">
           <div className="chatBody">
             {channelMessage?.map((message) => (
-              <div
-                className={
-                  user.uid == message.senderId ? "sender" : "recipient"
-                }
-              >
-                {/* <h2
+              <>
+                <div
                   className={
-                    user.uid == message.senderId
-                      ? "senderName"
-                      : "recipientName"
-                  }
-                >
-                  Suyash Pradhan
-                </h2>
-                <img
-                  src={Profile}
-                  alt="chatSenderAvatar"
-                  className={
-                    user.uid == message.senderId
-                      ? "chatSenderAvatar"
-                      : "chatRecipientAvatar"
-                  }
-                /> */}
-
-                <span className="message"> {message.message}</span>
-                <span className="timestamp">
-                  {`${new Date(message.timestamp).toLocaleDateString(
-                    "en-US"
-                  )} ${new Date(message.timestamp).toLocaleTimeString(
-                    "en-US"
-                  )}`}{" "}
-                </span>
-              </div>
+                    user.uid == message.senderId ? "sender" : "recipient"
+                  }>
+                  <span className="message"> {message.message}</span>
+                  <span className="timestamp">
+                    {`${new Date(message.timestamp).toLocaleDateString(
+                      "en-US"
+                    )} ${new Date(message.timestamp).toLocaleTimeString(
+                      "en-US"
+                    )}`}{" "}
+                  </span>
+                  <h2
+                    className={
+                      user.uid === message.senderId
+                        ? "senderName"
+                        : "recipientName"
+                    }>
+                    {message.username}
+                  </h2>
+                  <img
+                    src={message.userImage}
+                    alt="chatSenderAvatar"
+                    className={
+                      user.uid === message.senderId
+                        ? "chatSenderAvatar"
+                        : "chatRecipientAvatar"
+                    }
+                  />
+                </div>
+              </>
             ))}
             <div ref={chatRef}></div>
           </div>
