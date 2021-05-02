@@ -7,12 +7,12 @@ import googleIcon from "../../assests/images/google-icon.svg";
 
 export const Home = () => {
   const { user, loginUser, logoutUser } = useAuthContext();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <>
       <div className="Login">
         <div className="bannerImageWrapper">
-          <img className="bannerImage" src={banner} alt="Banner image" />
+          <img className="bannerImage" src={banner} alt="Banner" />
           <div className="footer">
             <p>Designed and developed by Team Name</p>
           </div>
