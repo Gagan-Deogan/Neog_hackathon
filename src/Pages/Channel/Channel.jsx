@@ -1,23 +1,14 @@
-import "./channel.css";
+import "./Channel.css";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../Context/AuthContext";
+import { ChannelProvider } from "../../Context/ChannelContext";
 import { useStatus } from "../../Context/LoaderContext";
 import { ChatBox } from "../../Components/ChatBox";
-import { useParams } from "react-router-dom";
+import { ChannelHeader } from "../../Components/ChannelHeader";
+import { ChannelBody } from "../../Components/ChannelBody";
+import { useSidebarContext } from "../../Context/SidebarContext";
 import { db } from "../../firebase";
-const getChannelById = ({ channelId }) => {
-  return db.collection("channels").doc(channelId);
-};
-const getChannelMessages = ({ Channel }) => {
-  console.log(Channel);
-  return Channel.collection("messages").orderBy("timestamp", "asc");
-};
-const getChannelAudiances = ({ Channel }) => {
-  return Channel.collection("audiances");
-};
-const getChannelMentors = ({ Channel }) => {
-  return Channel.collection("mentors");
-};
 
 const AudinceList = ({
   user,
@@ -60,96 +51,108 @@ const AudinceList = ({
   );
 };
 export const Channel = () => {
+  const { state } = useSidebarContext();
   const { channelId } = useParams();
   const {
     user: { uid, photoURL, displayName },
   } = useAuthContext();
-  const [roomMessage, setRoomMessage] = useState();
-  const [channelDetails, setChannelDetails] = useState();
-  const [channelAudiance, setChannelAudiance] = useState();
-  const [channelMentors, setChannelMentors] = useState();
-  useEffect(() => {
-    const Channel = getChannelById({ channelId });
-    const Messages = getChannelMessages({ Channel });
-    const Audiances = getChannelAudiances({ Channel });
-    const Mentors = getChannelMentors({ Channel });
-    Channel.onSnapshot((snapshot) => {
-      console.log(snapshot);
-      setChannelDetails(snapshot.data());
-    });
+  // const [channelMessage, setChannelMessage] = useState();
+  // const [channelDetails, setChannelDetails] = useState();
+  // const [channelAudiance, setChannelAudiance] = useState();
+  // const [channelMentors, setChannelMentors] = useState();
+  // useEffect(() => {
+  //   const Channel = getChannelById({ channelId });
+  //   const Messages = getChannelMessages({ Channel });
+  //   const Audiances = getChannelAudiances({ Channel });
+  //   const Mentors = getChannelMentors({ Channel });
+  //   Channel.onSnapshot((snapshot) => {
+  //     console.log(snapshot);
+  //     setChannelDetails(snapshot.data());
+  //   });
 
-    Messages.onSnapshot((snapshot) => {
-      setRoomMessage(
-        snapshot.docs.map((doc) => {
-          console.log(doc);
-          return { ...doc.data() };
-        })
-      );
-    });
-    Audiances.doc(uid).set({
-      name: displayName,
-      image: photoURL,
-    });
-    Mentors.onSnapshot((snapshot) => {
-      setChannelMentors(
-        snapshot.docs.map((doc) => {
-          return { uid: doc.id, ...doc.data() };
-        })
-      );
-    });
-    Audiances.onSnapshot((snapshot) => {
-      setChannelAudiance(
-        snapshot.docs.map((doc) => {
-          return { uid: doc.id, ...doc.data() };
-        })
-      );
-    });
-    return () => {
-      Audiances.doc(uid).delete();
-      Mentors.doc(uid).delete();
-    };
-  }, []);
-  const handleHandeRise = () => {
-    const Channel = getChannelById({ channelId });
-    const Audiances = getChannelAudiances({ Channel });
-    Audiances.doc(uid).update({
-      handRaise: true,
-    });
-  };
-  const handleRemoveFromAudiances = ({ uid }) => {
-    const Channel = getChannelById({ channelId });
-    const Audiances = getChannelAudiances({ Channel });
-    Audiances.doc(uid).delete();
-  };
-  const handleMoveToStage = ({ uid, name, image }) => {
-    const Channel = getChannelById({ channelId });
-    const Mentors = getChannelMentors({ Channel });
-    Mentors.doc(uid).set({
-      name,
-      image,
-    });
-    handleRemoveFromAudiances({ uid });
-  };
-  const handleAddToAudiances = ({ uid, image, name }) => {
-    const Channel = getChannelById({ channelId });
-    const Audiances = getChannelAudiances({ Channel });
-    Audiances.doc(uid).set({
-      name: name,
-      image: image,
-    });
-  };
-  const handleRemoveFromStage = ({ uid, name, image }) => {
-    console.log({ uid, name, image });
-    const Channel = getChannelById({ channelId });
-    const Mentors = getChannelMentors({ Channel });
-    Mentors.doc(uid).delete();
-    handleAddToAudiances({ uid, name, image });
-  };
+  //   Messages.onSnapshot((snapshot) => {
+  //     setChannelMessage(
+  //       snapshot.docs.map((doc) => {
+  //         console.log(doc);
+  //         return { ...doc.data() };
+  //       })
+  //     );
+  //   });
+  //   Audiances.doc(uid).set({
+  //     name: displayName,
+  //     image: photoURL,
+  //   });
+  //   Mentors.onSnapshot((snapshot) => {
+  //     setChannelMentors(
+  //       snapshot.docs.map((doc) => {
+  //         return { uid: doc.id, ...doc.data() };
+  //       })
+  //     );
+  //   });
+  //   Audiances.onSnapshot((snapshot) => {
+  //     setChannelAudiance(
+  //       snapshot.docs.map((doc) => {
+  //         return { uid: doc.id, ...doc.data() };
+  //       })
+  //     );
+  //   });
+  //   return () => {
+  //     Audiances.doc(uid).delete();
+  //     Mentors.doc(uid).delete();
+  //   };
+  // }, [channelId]);
+
+  // this neeed
+  // const handleHandeRise = () => {
+  //   const Channel = getChannelById({ channelId });
+  //   const Audiances = getChannelAudiances({ Channel });
+  //   Audiances.doc(uid).update({
+  //     handRaise: true,
+  //   });
+  // };
+  // const handleRemoveFromAudiances = ({ uid }) => {
+  //   const Channel = getChannelById({ channelId });
+  //   const Audiances = getChannelAudiances({ Channel });
+  //   Audiances.doc(uid).delete();
+  // };
+  // const handleMoveToStage = ({ uid, name, image }) => {
+  //   const Channel = getChannelById({ channelId });
+  //   const Mentors = getChannelMentors({ Channel });
+  //   Mentors.doc(uid).set({
+  //     name,
+  //     image,
+  //   });
+  //   handleRemoveFromAudiances({ uid });
+  // };
+  // const handleAddToAudiances = ({ uid, image, name }) => {
+  //   const Channel = getChannelById({ channelId });
+  //   const Audiances = getChannelAudiances({ Channel });
+  //   Audiances.doc(uid).set({
+  //     name: name,
+  //     image: image,
+  //   });
+  // };
+  // const handleRemoveFromStage = ({ uid, name, image }) => {
+  //   console.log({ uid, name, image });
+  //   const Channel = getChannelById({ channelId });
+  //   const Mentors = getChannelMentors({ Channel });
+  //   Mentors.doc(uid).delete();
+  //   handleAddToAudiances({ uid, name, image });
+  // };
+
+  // const totalParticipants = channelAudiance?.length + channelMentors?.length;
+
   return (
     <>
-      <div className="postion-absolute right">
+      <ChannelProvider>
+        <div className={state ? "mainToggled" : "main"}>
+          <ChannelHeader />
+          <ChannelBody />
+        </div>
+      </ChannelProvider>
+      {/* <div className="postion-absolute right">
         <h1>{channelId}</h1>
-        {roomMessage?.map((data) => (
+        {ChannelMessage?.map((data) => (
           <p key={data.id}>{data.message}</p>
         ))}
         {channelId && <ChatBox channelId={channelId} />}
@@ -187,7 +190,7 @@ export const Channel = () => {
               listFor="AUDIANCES"
             />
           ))}
-      </div>
+      </div> */}
     </>
   );
 };
