@@ -1,0 +1,88 @@
+.icon {
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-right: .4rem;
+    vertical-align: text-bottom;
+
+}
+
+.navLink {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.channelName {
+    font-size: 1.6rem;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: .3rem;
+    margin-left: 1rem;
+}
+
+.channelOwnerHeader {
+    font-size: 1rem;
+    display: inline;
+    font-weight: 400;
+    color: #5C5D5D;
+    margin-left: 1rem;
+}
+
+@media screen and (max-width:600px) and (min-width:0px) {
+    .channelName {
+        font-size: .9rem;
+    }
+
+    .channelOwnerHeader {
+        font-size: .8rem;
+    }
+
+    .navLink {
+        font-size: .8rem;
+    }
+
+    .chatRow {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sender {
+        padding: 1rem !important;
+    }
+
+    .message {
+        font-size: 1rem !important;
+    }
+
+    .recipient {
+        padding: 1rem !important;
+    }
+}
+
+@media screen and (max-width:836px) and (min-width:601px) {
+    .channelName {
+        font-size: .9rem;
+    }
+
+    .channelOwnerHeader {
+        font-size: .8rem;
+    }
+
+    .navLink {
+        font-size: .8rem;
+    }
+
+    .chatRow {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sender {
+        padding: 1rem !important;
+    }
+
+    .message {
+        font-size: 1rem !important;
+    }
+
+    .recipient {
+        padding: 1rem !important;
+    }
+}

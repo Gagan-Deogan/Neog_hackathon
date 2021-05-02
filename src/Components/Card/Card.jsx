@@ -1,14 +1,13 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
-
 import "./Card.css";
 import Banner from "../../assests/images/banner.jpg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Card = () => {
   return (
     <div className="cardRow">
-      <Link to="channel2">
+      <NavLink to="/dashboard/channelName">
         <div className="card">
           <div className="cardImage">
             <img src={Banner} className="cardImg" alt="banner" />
@@ -21,7 +20,7 @@ export const Card = () => {
             </p>
           </div>
         </div>
-      </Link>
+      </NavLink>
       <Link to="channel2">
         <div className="card">
           <div className="cardImage">
