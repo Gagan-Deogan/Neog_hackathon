@@ -1,0 +1,20 @@
+.main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    left: 20rem;
+    width: calc(100% - 21rem);
+    transition: left 300ms ease-in;
+}
+
+.mainToggled {
+    left: 0 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.mainWrapper {
+    padding: 1.6rem 2rem;
+}
