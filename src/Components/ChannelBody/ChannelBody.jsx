@@ -1,109 +1,86 @@
-import React, { useState } from "react";
-import Emoji from "../../assests/images/emoji.svg";
-import Send from "../../assests/images/send.svg";
-import Profile from "../../assests/images/profile.svg";
-import Picker from "emoji-picker-react";
-
 import "./ChannelBody.css";
+import "../ChannelHeader/ChannelHeader.css";
+import { useState, useRef, useEffect } from "react";
+import marked from "marked";
+import { useAuthContext } from "../../Context/AuthContext";
+import { useChannelContext } from "../../Context/ChannelContext";
+import { ChatBox } from "../ChatBox";
+
+const SingleParticipent = ({ participant }) => {
+  return (
+    <div className="singleParticipant">
+      <img
+        src={participant.image}
+        alt="participantName"
+        className="participantImage border-round"
+      />
+      <h1 className="participantName">{participant.name}</h1>
+    </div>
+  );
+};
+const Messages = ({ message, user }) => {
+  return (
+    <>
+      <div className={user.uid == message.senderId ? "sender" : "recipient"}>
+        <h2
+          className={
+            user.uid == message.senderId ? "senderName" : "recipientName"
+          }>
+          {message.username}
+        </h2>
+        <img
+          src={message.userImage}
+          alt="chatSenderAvatar"
+          className={
+            user.uid == message.senderId
+              ? "chatSenderAvatar"
+              : "chatRecipientAvatar"
+          }
+        />
+        <div
+          className="message"
+          dangerouslySetInnerHTML={{
+            __html: marked(message.message),
+          }}></div>
+        <span className="timestamp">
+          {`${new Date(message.timestamp).toLocaleDateString(
+            "en-US"
+          )} ${new Date(message.timestamp).toLocaleTimeString("en-US")}`}{" "}
+        </span>
+      </div>
+    </>
+  );
+};
 
 export const ChannelBody = () => {
-  const [chosenEmoji, setChosenEmoji] = useState(null);
-
-  const onEmojiClick = (event, emojiObject) => {
-    setChosenEmoji(emojiObject);
-  };
-
+  const { user } = useAuthContext();
+  const { channelMessage, channelAudiance } = useChannelContext();
+  const chatRef = useRef(null);
+  useEffect(() => {
+    chatRef?.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, [channelMessage]);
   return (
     <div className="mainWrapper">
       <div className="chatRow">
         <div className="chatRowLeft">
           <div className="chatBody">
-            <div className="sender">
-              <span className="message">
-                {" "}
-                Hello I'm Suyash Pradhan, Can you teach me ReactJS?
-              </span>
-              <span className="timestamp">05:40PM</span>
-            </div>
-            <div className="sender">
-              <span className="message">
-                {" "}
-                Hello I'm Suyash Pradhan, Can you teach me ReactJS?
-              </span>
-              <span className="timestamp">05:40PM</span>
-            </div>
-            <div className="sender">
-              <span className="message">
-                {" "}
-                Hello I'm Suyash Pradhan, Can you teach me ReactJS?
-              </span>
-              <span className="timestamp">05:40PM</span>
-            </div>
-            <div className="recipient">
-              <span className="message">
-                {" "}
-                Yes why not, start learning ReactJS from my course
-              </span>
-              <span className="timestamp">05:40PM</span>
-            </div>
-            <div className="recipient">
-              <span className="message">
-                {" "}
-                Yes why not, start learning ReactJS from my course
-              </span>
-              <span className="timestamp">05:40PM</span>
-            </div>
+            {channelMessage?.map((message) => (
+              <Messages message={message} user={user} />
+            ))}
+            <div ref={chatRef}></div>
           </div>
-          <div className="chatMessage">
-            {/*             <Picker onEmojiClick={onEmojiClick} />
-             */}{" "}
-            <img
-              onClick={onEmojiClick}
-              src={Emoji}
-              className="emojiIcon icon"
-              alt=" icon"
-            ></img>
-            <form action="#">
-              <input
-                type="text"
-                placeholder="Write your message..."
-                className="chatField"
-              />
-            </form>
-            <button className="button button-ternary">
-              <img src={Send} alt="send" className="sendButton"></img>
-            </button>
-          </div>
+          <ChatBox />
         </div>
         <div className="chatRowRight">
-          <h1 className="participantsHeader">Participants (93)</h1>
+          <h1 className="participantsHeader">
+            Participent ({channelAudiance?.length})
+          </h1>
           <div className="participantsRow">
-            <div className="singleParticipant">
-              <img
-                src={Profile}
-                alt="participantName"
-                className="participantImage"
-              />
-              <h1 className="participantName">Suyash Pradhan</h1>
-            </div>
-
-            <div className="singleParticipant">
-              <img
-                src={Profile}
-                alt="participantName"
-                className="participantImage"
-              />
-              <h1 className="participantName">Suyash Pradhan</h1>
-            </div>
-
-            <div className="singleParticipant">
-              <img
-                src={Profile}
-                alt="participantName"
-                className="participantImage"
-              />
-              <h1 className="participantName">Suyash Pradhan</h1>
-            </div>
+            {channelAudiance?.map((participant) => (
+              <SingleParticipent participant={participant} />
+            ))}
           </div>
         </div>
       </div>

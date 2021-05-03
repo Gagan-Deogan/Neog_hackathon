@@ -1,135 +1,232 @@
 .chatRow {
-    display: grid;
-    grid-template-columns: 1fr 20rem;
-    grid-gap: 1rem;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 20rem;
+  grid-gap: 1rem;
+  height: 100%;
 }
 
 .chatRowLeft {
-    border-right: 1px solid #E8E7E9;
-    height: calc(100vh - 12rem);
-    padding: 0 1rem;
+  border-right: 1px solid #e8e7e9;
+  height: calc(100vh - 10rem);
+  padding: 0 1rem;
+  position: relative;
 }
 
 .chatBody {
-    height: calc(100vh - 18rem);
-    overflow: auto;
-    padding: 0 1rem;
+  height: calc(100vh - 14rem);
+  overflow: auto;
+  padding: 1rem;
 }
 
 .chatMessage {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
-    align-items: center;
-    position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  position: relative;
 }
 
 .emojiIcon {
-    position: absolute;
-    left: 1rem;
+  position: absolute;
+  right: 4rem;
+  top: .1rem;
 }
 
 .chatField {
-    width: 100%;
-    background-color: #E8E7E9;
-    padding: 1rem 1rem 1rem 3rem;
-    border-radius: .3rem;
-    border: 1px solid #E8E7E9;
-    color: #696969;
-    cursor: pointer;
-    font-size: 1.1rem;
+  width: 100%;
+  background-color: #e8e7e9;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid #e8e7e9;
+  color: #696969;
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
+.chatField:focus {
+  outline: none;
+  border: 1px solid #4460f1;
+}
+
+
 .button-ternary {
-    background: transparent;
-    border: 1px solid #4460F1;
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 3rem;
-    border-radius: .6rem;
-    background-color: #4460F1;
-    cursor: pointer;
+  background: transparent;
+  border: 1px solid #4460f1;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 3rem;
+  border-radius: 0;
+  background-color: #4460f1;
+  cursor: pointer;
 }
 
 .sendButton {
-    height: 1.8rem;
-    width: 1.8rem;
+  height: 1.8rem;
+  width: 1.8rem;
 }
 
 .sender {
-    background-color: #4460F1;
-    max-width: 22rem;
-    margin-left: auto;
-    padding: 1.6rem;
-    color: #FFF;
-    margin-bottom: 0;
-    border-radius: 1rem 1rem 0 1rem;
-    position: relative;
-    margin-bottom: 3rem;
+  background-color: #4460f1;
+  max-width: 22rem;
+  margin-left: auto;
+  padding: 1.6rem;
+  color: #fff;
+  margin-bottom: 0;
+  border-radius: 1rem 1rem 0 1rem;
+  position: relative;
+  margin-bottom: 3rem;
+  margin-right: 2.2rem;
 }
 
 .message {
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.4;
-    display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  display: block;
 }
 
 .timestamp {
-    position: absolute;
-    bottom: -1.6rem;
-    left: 1rem;
-    color: #696969;
+  position: absolute;
+  bottom: -1.6rem;
+  left: 1rem;
+  font-size: 0.9rem;
+  color: #696969;
 }
 
 .recipient {
-    background-color: #EFF2F9;
-    max-width: 22rem;
-    margin-right: auto;
-    padding: 1.6rem;
-    color: #5c5b5b;
-    margin-bottom: 0;
-    border-radius: 0 1rem 1rem 1rem;
-    position: relative;
-    margin-bottom: 3rem;
+  background-color: #eff2f9;
+  max-width: 22rem;
+  margin-right: auto;
+  padding: 1.6rem;
+  color: #5c5b5b;
+  margin-bottom: 0;
+  border-radius: 0 1rem 1rem 1rem;
+  position: relative;
+  margin-bottom: 3rem;
+  margin-left: 2.2rem;
 }
 
 .participantsHeader {
-    font-size: 1.6rem;
-    padding: 1rem 0;
-    font-weight: 500;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  font-weight: 500;
 }
 
 .participantsRow {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
-    align-items: center;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  margin: 2rem 0;
 }
 
 .singleParticipant {
-    padding: .5rem;
-    cursor: pointer;
+  padding: 0.5rem;
+  cursor: pointer;
 }
 
 .singleParticipant:hover {
-    background-color: #ebebeb;
+  background-color: #ebebeb;
 }
 
 .participantImage {
-    height: 2rem;
-    width: 2rem;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 
 .participantName {
-    font-size: .9rem;
-    font-weight: 400;
-    color: #696969;
-    text-align: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #696969;
+  text-align: center;
+}
+
+.senderName {
+  position: absolute;
+  top: 0.5rem;
+  left: -10rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #eee;
+  color: #363636;
+  font-weight: 600;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+}
+
+.chatSenderAvatar {
+  height: 2.8rem;
+  width: 2.8rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-left: auto;
+  position: absolute;
+  right: -3.1rem;
+  bottom: 0;
+}
+
+.recipientName {
+  position: absolute;
+  top: 0.5rem;
+  right: -10rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #eee;
+  color: #363636;
+  font-weight: 600;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+}
+
+.chatRecipientAvatar {
+  height: 2.8rem;
+  width: 2.8rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-left: auto;
+  position: absolute;
+  left: -3.1rem;
+  bottom: 0;
+}
+
+@media screen and (max-width: 600px) and (min-width: 100px) {
+  .chatRow {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sender {
+    padding: 1rem !important;
+  }
+
+  .message {
+    font-size: 1rem !important;
+  }
+
+  .recipient {
+    padding: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .chatRow {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sender {
+    padding: 1rem !important;
+  }
+
+  .message {
+    font-size: 1rem !important;
+  }
+
+  .recipient {
+    padding: 1rem !important;
+  }
 }

@@ -1,0 +1,98 @@
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-column {
+  margin-bottom: 1.6rem;
+}
+
+.form-column label {
+  padding-bottom: 0.2rem;
+  display: block;
+  color: var(--secondary);
+}
+
+.form-field {
+  width: 100%;
+  padding: 0.6rem 0.4rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--gray);
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: transparent;
+}
+
+.form-field:focus {
+  border: 1px solid #4460f1;
+  outline: none;
+}
+
+.form-textarea {
+  height: 6rem;
+  resize: none;
+  width: 100%;
+  padding: 0.6rem 0.4rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--gray);
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: transparent;
+}
+
+
+.button-primary {
+  align-self: center;
+}
+
+.heading {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 0 1rem 0;
+  margin: 1rem 0 2rem 0;
+}
+
+.create-channel {
+  background-color: #00000008;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.create-channel-wrapper {
+  display: flex;
+  width: 40vw;
+  margin: auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0px #d2d2d2;
+  justify-content: center;
+}
+
+.close-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  width: 1rem;
+}
+
+.close-icon-wrapper {
+  position: relative;
+}
+
+@media screen and (max-width: 600px) and (min-width: 100px) {
+  .button-primary {
+    width: fit-content;
+    border-radius: unset;
+    height: unset;
+    width: unset;
+  }
+
+  .create-channel-wrapper {
+    width: 90vw;
+  }
+}

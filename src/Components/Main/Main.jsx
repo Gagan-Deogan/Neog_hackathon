@@ -1,10 +1,8 @@
-import React from "react";
+import "./Main.css";
 import { Header } from "../Header";
 import { Greeting } from "../Greeting";
-import "./Main.css";
 import { CardWrapper } from "../CardWrapper";
 import { useSidebarContext } from "../../Context/SidebarContext";
-import { Channels } from "../Channels";
 
 export const Main = () => {
   const { state } = useSidebarContext();
