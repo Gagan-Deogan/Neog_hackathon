@@ -1,10 +1,6 @@
 import "./ChannelBody.css";
 import "../ChannelHeader/ChannelHeader.css";
 import { useState, useRef, useEffect } from "react";
-import Emoji from "../../assests/images/emoji.svg";
-import Send from "../../assests/images/send.svg";
-import Profile from "../../assests/images/profile.svg";
-import Picker from "emoji-picker-react";
 import marked from "marked";
 import { useAuthContext } from "../../Context/AuthContext";
 import { useChannelContext } from "../../Context/ChannelContext";
@@ -22,19 +18,43 @@ const SingleParticipent = ({ participant }) => {
     </div>
   );
 };
+const Messages = ({ message, user }) => {
+  return (
+    <>
+      <div className={user.uid == message.senderId ? "sender" : "recipient"}>
+        <h2
+          className={
+            user.uid == message.senderId ? "senderName" : "recipientName"
+          }>
+          {message.username}
+        </h2>
+        <img
+          src={message.userImage}
+          alt="chatSenderAvatar"
+          className={
+            user.uid == message.senderId
+              ? "chatSenderAvatar"
+              : "chatRecipientAvatar"
+          }
+        />
+        <div
+          className="message"
+          dangerouslySetInnerHTML={{
+            __html: marked(message.message),
+          }}></div>
+        <span className="timestamp">
+          {`${new Date(message.timestamp).toLocaleDateString(
+            "en-US"
+          )} ${new Date(message.timestamp).toLocaleTimeString("en-US")}`}{" "}
+        </span>
+      </div>
+    </>
+  );
+};
 
 export const ChannelBody = () => {
   const { user } = useAuthContext();
-  const {
-    channelDetails,
-    channelMessage,
-    channelAudiance,
-    ChannelMentor,
-  } = useChannelContext();
-  const [chosenEmoji, setChosenEmoji] = useState(null);
-  const onEmojiClick = (event, emojiObject) => {
-    setChosenEmoji(emojiObject);
-  };
+  const { channelMessage, channelAudiance } = useChannelContext();
   const chatRef = useRef(null);
   useEffect(() => {
     chatRef?.current?.scrollIntoView({
@@ -47,25 +67,7 @@ export const ChannelBody = () => {
         <div className="chatRowLeft">
           <div className="chatBody">
             {channelMessage?.map((message) => (
-              <>
-                <div
-                  className={
-                    user.uid == message.senderId ? "sender" : "recipient"
-                  }>
-                  <div
-                    className="message"
-                    dangerouslySetInnerHTML={{
-                      __html: marked(message.message),
-                    }}></div>
-                  <span className="timestamp">
-                    {`${new Date(message.timestamp).toLocaleDateString(
-                      "en-US"
-                    )} ${new Date(message.timestamp).toLocaleTimeString(
-                      "en-US"
-                    )}`}{" "}
-                  </span>
-                </div>
-              </>
+              <Messages message={message} user={user} />
             ))}
             <div ref={chatRef}></div>
           </div>
@@ -73,7 +75,7 @@ export const ChannelBody = () => {
         </div>
         <div className="chatRowRight">
           <h1 className="participantsHeader">
-            Audiances ({channelAudiance?.length})
+            Participent ({channelAudiance?.length})
           </h1>
           <div className="participantsRow">
             {channelAudiance?.map((participant) => (

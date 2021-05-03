@@ -75,3 +75,6 @@ a {
 .align-start {
   align-items: flex-start;
 }
+.border-radius-4 {
+  border-radius: 4px;
+}

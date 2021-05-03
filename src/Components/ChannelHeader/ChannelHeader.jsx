@@ -6,9 +6,14 @@ import { useChannelContext } from "../../Context/ChannelContext";
 import * as FaIcons from "react-icons/fa";
 import Avatar from "../../assests/images/profile.svg";
 import Home from "../../assests/images/home.svg";
+import { useAuthContext } from "../../Context/AuthContext";
 
 export const ChannelHeader = () => {
   const { setState } = useSidebarContext();
+  const { logoutUser } = useAuthContext();
+  const {
+    user: { photoURL },
+  } = useAuthContext();
   const {
     channelDetails,
     channelAudiance,
@@ -39,10 +44,18 @@ export const ChannelHeader = () => {
             </Link>
             <div className="profileDropdown">
               <div className="profile">
-                <img src={Avatar} alt="profile" className="profileImage" />
+                <img
+                  src={photoURL}
+                  alt="profile"
+                  className="profileImage border-round"
+                />
               </div>
               <div class="profileDropdownContent">
-                <button className="link link-danger">Logout</button>
+                <button
+                  className="link link-danger border-radius-4"
+                  onClick={logoutUser}>
+                  Logout
+                </button>
               </div>
             </div>
           </div>
