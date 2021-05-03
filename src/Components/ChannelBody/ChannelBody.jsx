@@ -29,6 +29,29 @@ export const ChannelBody = () => {
                 }>
                 <div className="message" dangerouslySetInnerHTML={{ __html: marked(message.message)}}></div>
                 <span className="timestamp" >{message.timestamp}</span>
+                }
+              >
+                {/* <h2
+                  className={
+                    user.uid == message.senderId
+                      ? "senderName"
+                      : "recipientName"
+                  }
+                >
+                  Suyash Pradhan
+                </h2>
+                <img
+                  src={Profile}
+                  alt="chatSenderAvatar"
+                  className={
+                    user.uid == message.senderId
+                      ? "chatSenderAvatar"
+                      : "chatRecipientAvatar"
+                  }
+                /> */}
+
+                <span className="message"> {message.message}</span>
+                <span className="timestamp">{message.timestamp}</span>
               </div>
             ))}
           </div>
