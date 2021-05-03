@@ -10,6 +10,7 @@ import { useAuthContext } from "../../Context/AuthContext";
 
 export const ChannelHeader = () => {
   const { setState } = useSidebarContext();
+  const { logoutUser } = useAuthContext();
   const {
     user: { photoURL },
   } = useAuthContext();
@@ -50,7 +51,11 @@ export const ChannelHeader = () => {
                 />
               </div>
               <div class="profileDropdownContent">
-                <button className="link link-danger">Logout</button>
+                <button
+                  className="link link-danger border-radius-4"
+                  onClick={logoutUser}>
+                  Logout
+                </button>
               </div>
             </div>
           </div>

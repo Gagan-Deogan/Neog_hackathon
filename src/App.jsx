@@ -15,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <ProtectedRoute path="/profile" element={<Profile />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <ProtectedRoute path="/dashboard/*" element={<Dashboard />} />
       </Routes>
       {snakbarStatus["isShow"] === true && <Snakbar></Snakbar>}
     </div>

@@ -1,5 +1,5 @@
 import { useAuthContext } from "../../Context/AuthContext";
-import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useStatus } from "../../Context/LoaderContext";
 import banner from "../../assests/images/pagebanner.svg";
 import logo from "../../assests/images/logo.svg";
@@ -7,8 +7,11 @@ import "./index.css";
 import googleIcon from "../../assests/images/google.svg";
 
 export const Home = () => {
-  const { user, loginUser, logoutUser } = useAuthContext();
-  // const navigate = useNavigate();
+  const { user, loginUser } = useAuthContext();
+  const navigate = useNavigate();
+  if (user) {
+    navigate("/dashbord");
+  }
   return (
     <>
       <div className="Login">
@@ -28,9 +31,6 @@ export const Home = () => {
               Sign in with google
             </button>
           )}
-          {user && <button onClick={logoutUser}>Logout</button>}
-          {user && <Link to="/dashboard">Dashboard</Link>}
-
           <div className="footer">
             <p>Designed and developed by Team Hackers</p>
           </div>
